@@ -1,7 +1,4 @@
-#include "Graph.hh"
-#include "PDGEdge.hh"
-#include "PDGEnums.hh"
-#include "llvm/IR/Instructions.h"
+#include "PDGCallGraph.hh"
 
 using namespace llvm;
 
@@ -65,6 +62,17 @@ bool pdg::GenericGraph::canReach(pdg::Node &src, pdg::Node &dst)
   return false;
 }
 
+
+void getLineNumber(const llvm::Instruction *I) {
+  if (const llvm::DebugLoc &Loc = I->getDebugLoc()) {
+     StringRef File = Loc->getFilename();
+      unsigned Line = Loc.getLine();
+
+      errs() << "   File: " << File << ", Line: " << Line << "\n";
+    
+  }
+}
+
 bool pdg::GenericGraph::canReach(pdg::Node &src, pdg::Node &dst, std::set<EdgeType> exclude_edge_types)
 {
   std::set<Node *> visited;
@@ -77,6 +85,14 @@ bool pdg::GenericGraph::canReach(pdg::Node &src, pdg::Node &dst, std::set<EdgeTy
     node_stack.pop();
     if (visited.find(current_node) != visited.end())
       continue;
+        llvm::Value *curvalue=current_node-> getValue();
+    if(curvalue)
+    {
+      llvm::Instruction* inst = llvm::dyn_cast<llvm::Instruction>(curvalue);
+      errs() << "node value:" <<*curvalue << "\n";
+      if (inst)
+        getLineNumber(inst);
+    }
     visited.insert(current_node);
     if (current_node == &dst)
       return true;
@@ -86,7 +102,23 @@ bool pdg::GenericGraph::canReach(pdg::Node &src, pdg::Node &dst, std::set<EdgeTy
       if (exclude_edge_types.find(out_edge->getEdgeType()) != exclude_edge_types.end())
         continue;
       node_stack.push(out_edge->getDstNode());
+    llvm::Value *curvalue=out_edge->getDstNode()->getValue();
+      if(curvalue)
+      {
+        llvm::Instruction* inst = llvm::dyn_cast<llvm::Instruction>(curvalue);
+
+        //打印out_edge->getEdgeType()的枚举名称
+        errs() << "   edge type:" <<pdgutils::getEdgeTypeStr(out_edge->getEdgeType()) << "\n";
+
+        errs() << "   adjective node value:" <<*curvalue << "\n";
+        if(inst)
+          getLineNumber(inst);
+
+      }
+
     }
+
+     errs()<< "\n";
   }
   return false;
 }
@@ -156,6 +188,10 @@ void pdg::ProgramGraph::build(Module &M)
     _func_wrapper_map.insert(std::make_pair(&F, func_w));
   }
 
+  // build call graph
+  auto &call_g = PDGCallGraph::getInstance();
+  if (!call_g.isBuild())
+    call_g.build(M);
   // handle call sites
   for (auto &F : M)
   {
@@ -170,7 +206,12 @@ void pdg::ProgramGraph::build(Module &M)
     {
       auto called_func = pdgutils::getCalledFunc(*ci);
       if (called_func == nullptr)
-        continue;
+      {
+        // handle indirect call
+        auto ind_call_candidates = call_g.getIndirectCallCandidates(*ci, M);
+        if (ind_call_candidates.size() > 0)
+          called_func = *ind_call_candidates.begin();
+      }
       if (!hasFuncWrapper(*called_func))
         continue;
       CallWrapper *cw = new CallWrapper(*ci);

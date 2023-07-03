@@ -1,4 +1,4 @@
-# Install script for directory: /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call
+# Install script for directory: /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,12 +44,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libindcall.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE MODULE FILES "/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/libindcall.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE MODULE FILES "/home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call/libindcall.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libindcall.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libindcall.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libindcall.so"
-         OLD_RPATH "/home/raoxue/node_modules/llvm-12.0.0.obj/lib:/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/pdg:/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/pdg/build:"
+         OLD_RPATH "/home/raoxue/node_modules/llvm-12.0.0.obj/lib:/home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call/pdg:/home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call/pdg/build:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libindcall.so")
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -345,6 +345,8 @@ std::string pdg::pdgutils::getEdgeTypeStr(EdgeType edge_type)
     return "IND_CALL";
   case EdgeType::CONTROLDEP_CALLINV:
     return "CONTROLDEP_CALLINV";
+  case EdgeType::CONTROLDEP_CALLRET:
+    return "CONTROLDEP_CALLRET";
   case EdgeType::CONTROLDEP_ENTRY:
     return "CONTROLDEP_ENTRY";
   case EdgeType::CONTROLDEP_BR:

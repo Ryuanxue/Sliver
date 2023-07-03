@@ -503,8 +503,9 @@ bool sliver::SLICE_INSTRUMENT::runOnModule(Module &M)
     modulename=M.getName().str();
     std::vector<string> funnameset;
     //判断模块中有无FILE结构体
-    LLVMContextImpl* C = M.getContext().pImpl;
-    if (StructType *filetype= C->NamedStructTypes.lookup("struct._IO_FILE"))
+    // LLVMContextImpl* C = M.getContext().pImpl;
+    StructType *filetype= llvm::StructType::getTypeByName(M.getContext(), "struct._IO_FILE"); 
+    if (filetype!=nullptr)
     {
         IO_FILE_ty=filetype;
     }else
@@ -566,12 +567,14 @@ bool sliver::SLICE_INSTRUMENT::runOnModule(Module &M)
                         {
                         
                         CallInst *callInst=dyn_cast<CallInst>(inst);
+                         llvm::CallBase &CB = *callInst;
                         if (Function *calledFunction = callInst->getCalledFunction()) 
                         {
                             tempfunname=calledFunction->getName().str();
                         }
                         //this prints out the void bitcasted functions
-                        else if (Function *voidFunc = dyn_cast<llvm::Function>(callInst->getCalledValue()->stripPointerCasts()))
+                       
+                        else if (Function *voidFunc = dyn_cast<llvm::Function>(callInst->getCalledOperand()->stripPointerCasts()))
                          {
                             tempfunname=voidFunc->getName().str();
                         }

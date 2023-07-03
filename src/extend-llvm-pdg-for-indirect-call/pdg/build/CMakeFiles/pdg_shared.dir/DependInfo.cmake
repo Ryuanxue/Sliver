@@ -21,7 +21,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/lib/llvm-10/include"
+  "/home/raoxue/node_modules/llvm-12.0.0.obj/include"
   "../include"
   "../src"
   )

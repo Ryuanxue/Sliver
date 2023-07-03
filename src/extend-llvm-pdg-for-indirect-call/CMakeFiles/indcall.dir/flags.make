@@ -6,5 +6,5 @@ CXX_FLAGS =  -fno-rtti -Wall    -fdiagnostics-color=always -Wno-everything -g -f
 
 CXX_DEFINES = -Dindcall_EXPORTS
 
-CXX_INCLUDES = -I/home/raoxue/node_modules/llvm-12.0.0.obj/include -I/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/pdg/SVF/include -I/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/pdg/include -I/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/include 
+CXX_INCLUDES = -I/home/raoxue/node_modules/llvm-12.0.0.obj/include -I/home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call/pdg/SVF/include -I/home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call/pdg/include -I/home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call/include 
 

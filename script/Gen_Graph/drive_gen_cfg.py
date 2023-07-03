@@ -14,7 +14,12 @@ if __name__ == '__main__':
         filename = os.path.basename(file)
         if filename.endswith(".ll"):
             if "_instrument" not in filename:
-                command="cd "+dic+";opt -load libSliverUtilpass.so -CFG "+filename
+                #在abspath中查找‘/workspace’
+                index = abspath.find("/workspace")
+                newpath = abspath[:index]
+                pass_so_dir=newpath+"/lib/libSliverUtilpass.so"
+                print(pass_so_dir)
+                command="cd "+dic+";opt -load libSliverUtilpass.so  -CFG "+filename
                 os.system(command)
 
     # dot_path = "../../meta_data/cfg_dot"

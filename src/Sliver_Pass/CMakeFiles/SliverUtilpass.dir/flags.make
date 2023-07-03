@@ -6,5 +6,5 @@ CXX_FLAGS =  -fno-rtti -Wall    -fdiagnostics-color=always -Wno-everything -g -f
 
 CXX_DEFINES = -DSliverUtilpass_EXPORTS
 
-CXX_INCLUDES = -I/home/raoxue/node_modules/llvm-12.0.0.obj/include -I/home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass/include -I/home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass/src/IR -I/home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass/src 
+CXX_INCLUDES = -I/home/raoxue/node_modules/llvm-12.0.0.obj/include -I/home/raoxue/Desktop/MemVerif/Sliver_Pass/include -I/home/raoxue/Desktop/MemVerif/Sliver_Pass/src/IR -I/home/raoxue/Desktop/MemVerif/Sliver_Pass/src 
 

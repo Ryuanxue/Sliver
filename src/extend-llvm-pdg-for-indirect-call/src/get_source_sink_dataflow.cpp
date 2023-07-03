@@ -259,6 +259,7 @@ bool pdg::GetDataFlow:: is_have_flow(Value* src,Value* dst)
 	pdg::Node* src_node = g->getNode(*src);
 	pdg::Node* dst_node = g->getNode(*dst);
 
+	// return g->canReach(*src_node, *dst_node,{EdgeType::CONTROLDEP_ENTRY});
 	return g->canReach(*src_node, *dst_node);
 }
 

@@ -72,8 +72,9 @@ bool sliver::MainRetInstruction::runOnModule(Module &M)
 {
     
     //判断模块中有无FILE结构体
-    LLVMContextImpl* C = M.getContext().pImpl;
-    if (StructType *filetype= C->NamedStructTypes.lookup("struct._IO_FILE"))
+    // LLVMContextImpl* C = M.getContext().pImpl;
+    StructType *filetype= llvm::StructType::getTypeByName(M.getContext(), "struct._IO_FILE"); 
+    if (filetype!=nullptr)
     {
         IO_FILE_ty=filetype;
     }else

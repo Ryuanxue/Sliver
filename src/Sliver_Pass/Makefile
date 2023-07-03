@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass
+CMAKE_SOURCE_DIR = /home/raoxue/Desktop/MemVerif/Sliver_Pass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass
+CMAKE_BINARY_DIR = /home/raoxue/Desktop/MemVerif/Sliver_Pass
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass/CMakeFiles /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/raoxue/Desktop/MemVerif/Sliver_Pass/CMakeFiles /home/raoxue/Desktop/MemVerif/Sliver_Pass/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/raoxue/Desktop/MemVerif/Sliver_Pass/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

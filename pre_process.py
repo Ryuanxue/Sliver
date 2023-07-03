@@ -193,6 +193,8 @@ def auto_genslice_one(abspath_project):
 	#将abspath_project分解为dirname和filename
 	inputdir = os.path.dirname(abspath_project)
 	dirname = os.path.basename(abspath_project)
+	print(inputdir)
+	print(dirname)
 	# inputdir_path = inputdir +'/'+ dirname
     #解耦原代码到workprodir
 	workprodir = "workspace/" + dirname+"/"
@@ -201,6 +203,7 @@ def auto_genslice_one(abspath_project):
 	auto_decoup_one(dirname ,workprodir, inputdir)
 
 	output_dir="workspace/"+dirname+"/source_code"
+	print(output_dir)
    	#复制workprodir中的文件到
 	if not os.path.exists(output_dir):
 		os.makedirs(output_dir)

@@ -1,6 +1,9 @@
 
 cmake_minimum_required(VERSION 3.4.3)
 project(indcall)
+
+#如果你的llvm-10安装在其他的位置，则可以修改此变量
+#set(LLVM_DIR "/usr/lib/llvm-10/cmake")
 find_package(LLVM REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LT_LLVM_INSTALL_DIR}")

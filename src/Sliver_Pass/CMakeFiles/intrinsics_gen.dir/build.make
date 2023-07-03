@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass
+CMAKE_SOURCE_DIR = /home/raoxue/Desktop/MemVerif/Sliver_Pass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass
+CMAKE_BINARY_DIR = /home/raoxue/Desktop/MemVerif/Sliver_Pass
 
 # Utility rule file for intrinsics_gen.
 
@@ -67,6 +67,6 @@ CMakeFiles/intrinsics_gen.dir/clean:
 .PHONY : CMakeFiles/intrinsics_gen.dir/clean
 
 CMakeFiles/intrinsics_gen.dir/depend:
-	cd /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass /home/raoxue/Desktop/My_sliver/Sliver/src/Sliver_Pass/CMakeFiles/intrinsics_gen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/raoxue/Desktop/MemVerif/Sliver_Pass && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raoxue/Desktop/MemVerif/Sliver_Pass /home/raoxue/Desktop/MemVerif/Sliver_Pass /home/raoxue/Desktop/MemVerif/Sliver_Pass /home/raoxue/Desktop/MemVerif/Sliver_Pass /home/raoxue/Desktop/MemVerif/Sliver_Pass/CMakeFiles/intrinsics_gen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/intrinsics_gen.dir/depend
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call
+CMAKE_SOURCE_DIR = /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call
+CMAKE_BINARY_DIR = /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call
 
 # Utility rule file for intrinsics_gen.
 
@@ -67,6 +67,6 @@ CMakeFiles/intrinsics_gen.dir/clean:
 .PHONY : CMakeFiles/intrinsics_gen.dir/clean
 
 CMakeFiles/intrinsics_gen.dir/depend:
-	cd /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call /home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/intrinsics_gen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call /home/raoxue/Desktop/MemVerif/extend-llvm-pdg-for-indirect-call/CMakeFiles/intrinsics_gen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/intrinsics_gen.dir/depend
 

@@ -124,6 +124,19 @@ pdg_shared/fast:
 .PHONY : pdg_shared/fast
 
 #=============================================================================
+# Target rules for targets named acc_gen
+
+# Build rule for target.
+acc_gen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 acc_gen
+.PHONY : acc_gen
+
+# fast build rule for target.
+acc_gen/fast:
+	$(MAKE) -f CMakeFiles/acc_gen.dir/build.make CMakeFiles/acc_gen.dir/build
+.PHONY : acc_gen/fast
+
+#=============================================================================
 # Target rules for targets named pdg
 
 # Build rule for target.
@@ -135,6 +148,19 @@ pdg: cmake_check_build_system
 pdg/fast:
 	$(MAKE) -f CMakeFiles/pdg.dir/build.make CMakeFiles/pdg.dir/build
 .PHONY : pdg/fast
+
+#=============================================================================
+# Target rules for targets named omp_gen
+
+# Build rule for target.
+omp_gen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 omp_gen
+.PHONY : omp_gen
+
+# fast build rule for target.
+omp_gen/fast:
+	$(MAKE) -f CMakeFiles/omp_gen.dir/build.make CMakeFiles/omp_gen.dir/build
+.PHONY : omp_gen/fast
 
 #=============================================================================
 # Target rules for targets named intrinsics_gen
@@ -517,8 +543,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... pdg_shared"
+	@echo "... acc_gen"
 	@echo "... edit_cache"
 	@echo "... pdg"
+	@echo "... omp_gen"
 	@echo "... intrinsics_gen"
 	@echo "... src/CallWrapper.o"
 	@echo "... src/CallWrapper.i"
