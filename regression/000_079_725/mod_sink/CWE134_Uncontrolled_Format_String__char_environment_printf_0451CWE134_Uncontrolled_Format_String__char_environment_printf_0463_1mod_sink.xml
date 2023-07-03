@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="data" newname="_CWE134_Uncontrolled_Format_String__char_environment_printf_04_bad_data_0" kind="one_ptr" type="char"/>
+ <global name="STATIC_CONST_TRUE" newname="STATIC_CONST_TRUE" kind="basic" type="int"/>
+</root>

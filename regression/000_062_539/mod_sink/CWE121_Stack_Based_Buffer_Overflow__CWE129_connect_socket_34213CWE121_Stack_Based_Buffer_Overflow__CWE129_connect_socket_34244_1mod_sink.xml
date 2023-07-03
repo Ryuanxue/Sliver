@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="data" newname="_goodB2G_data_1" kind="basic" type="int"/>
+</root>

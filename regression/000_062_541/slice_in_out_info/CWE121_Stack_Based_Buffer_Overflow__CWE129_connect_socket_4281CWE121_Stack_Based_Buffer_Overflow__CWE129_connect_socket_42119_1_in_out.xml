@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="81"/>
+ <in_funname value="badSource"/>
+ <slicefun funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_4281CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42119_1"/>
+ <srcfun funname="recv"/>
+ <out_line value="119"/>
+ <out_funname value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42_bad"/>
+ <in_file value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42.c"/>
+ <src_sta value="_badSource_recvResult_0 = recv(_badSource_connectSocket_0, _badSource_inputBuffer_0, ((3 * (sizeof(_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42_bad_data_0))) + 2) - 1, 0)"/>
+ <out_file value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42.c"/>
+ <in_vars>
+  <in_var rawname="inputBuffer" newname="_badSource_inputBuffer_0" kind="one_arr" type="char" dim=""/>
+ </in_vars>
+ <out_vars>
+  <out_var name="data" newname="_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42_bad_data_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_4281CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42119_1"/>
+ <gen_fun_params>
+  <param name="_badSource_inputBuffer_0" kind="one_arr" type="char" dim="(3 * (sizeof(_badSource_data_0))) + 2"/>
+  <param name="badSource_return_" kind="basic" type="int"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="badSource" file="/home/raoxue/Desktop/MemVerif/workspace/000_062_541/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42.c"/>
+  <fun funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_062_541/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_42.c"/>
+ </funsig>
+ <Gvars/>
+</root>

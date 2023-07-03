@@ -1,0 +1,23 @@
+digraph "CFG for'all_ll_goodG2B' function" {
+	BBall_ll_goodG2B_start[shape=record,label="{all_ll_goodG2B_start}"];
+	BBall_ll_goodG2B_start-> all_ll_goodG2BBB112;
+	all_ll_goodG2BBB112 [shape=record, label="{BB112:\l\l/:93624536\l
+  %data = alloca i32, align 4\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_534/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_21.c:364\l
+  call void @llvm.dbg.declare(metadata i32* %data, metadata !534, metadata !DIExpression()), !dbg !535\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_534/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_21.c:366\l
+  store i32 -1, i32* %data, align 4, !dbg !119\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_534/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_21.c:369\l
+  store i32 7, i32* %data, align 4, !dbg !120\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_534/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_21.c:370\l
+  store i32 1, i32* @goodG2BStatic, align 4, !dbg !121\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_534/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_21.c:371\l
+  %0 = load i32, i32* %data, align 4, !dbg !122\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_534/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_21.c:371\l
+  call void @goodG2BSink(i32 %0), !dbg !123\l
+}"];
+	all_ll_goodG2BBB112-> all_ll_goodG2BBB113;
+	all_ll_goodG2BBB113 [shape=record, label="{BB113:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_534/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_21.c:372\l
+  ret void, !dbg !124\l
+}"];
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="315"/>
+ <in_funname value="goodB2G2"/>
+ <slicefun funname="CWE606_Unchecked_Loop_Condition__char_connect_socket_15315CWE606_Unchecked_Loop_Condition__char_connect_socket_15448_1"/>
+ <srcfun funname="recv"/>
+ <out_line value="448"/>
+ <out_funname value="goodG2B2"/>
+ <in_file value="CWE606_Unchecked_Loop_Condition__char_connect_socket_15.c"/>
+ <src_sta value="_goodB2G2_recvResult_0 = recv(_goodB2G2_connectSocket_0, (char *) (_goodB2G2_data_0 + _goodB2G2_dataLen_0), (sizeof(char)) * ((100 - _goodB2G2_dataLen_0) - 1), 0)"/>
+ <out_file value="CWE606_Unchecked_Loop_Condition__char_connect_socket_15.c"/>
+ <in_vars>
+  <in_var rawname="data" newname="_goodB2G2_data_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="n" newname="_goodG2B2_n_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE606_Unchecked_Loop_Condition__char_connect_socket_15315CWE606_Unchecked_Loop_Condition__char_connect_socket_15448_1"/>
+ <gen_fun_params>
+  <param name="_goodB2G2_data_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="goodB2G2" file="/home/raoxue/Desktop/MemVerif/workspace/000_108_944/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_15.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_connect_socket_15_good" file="/home/raoxue/Desktop/MemVerif/workspace/000_108_944/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_15.c"/>
+  <fun funname="goodG2B2" file="/home/raoxue/Desktop/MemVerif/workspace/000_108_944/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_15.c"/>
+ </funsig>
+ <Gvars/>
+</root>

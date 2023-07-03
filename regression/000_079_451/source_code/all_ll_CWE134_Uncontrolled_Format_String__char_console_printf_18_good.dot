@@ -1,0 +1,15 @@
+digraph "CFG for'all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_good' function" {
+	BBall_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_good_start[shape=record,label="{all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_good_start}"];
+	BBall_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_good_start-> all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_goodBB37;
+	all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_goodBB37 [shape=record, label="{BB37:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_451/source_code/CWE134_Uncontrolled_Format_String__char_console_printf_18.c:126\l
+  call void @goodB2G(), !dbg !55\l
+}"];
+	all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_goodBB37-> all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_goodBB38;
+	all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_goodBB38 [shape=record, label="{BB38:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_451/source_code/CWE134_Uncontrolled_Format_String__char_console_printf_18.c:127\l
+  call void @goodG2B(), !dbg !56\l
+}"];
+	all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_goodBB38-> all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_goodBB39;
+	all_ll_CWE134_Uncontrolled_Format_String__char_console_printf_18_goodBB39 [shape=record, label="{BB39:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_451/source_code/CWE134_Uncontrolled_Format_String__char_console_printf_18.c:128\l
+  ret void, !dbg !57\l
+}"];
+}

@@ -1,0 +1,19 @@
+digraph "CFG for'io_ll_printIntLine' function" {
+	BBio_ll_printIntLine_start[shape=record,label="{io_ll_printIntLine_start}"];
+	BBio_ll_printIntLine_start-> io_ll_printIntLineBB14;
+	io_ll_printIntLineBB14 [shape=record, label="{BB14:\l\l/:86830680\l
+  %intNumber.addr = alloca i32, align 4\l
+/:86830680\l
+  store i32 %intNumber, i32* %intNumber.addr, align 4\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/io.c:35\l
+  call void @llvm.dbg.declare(metadata i32* %intNumber.addr, metadata !97, metadata !DIExpression()), !dbg !98\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/io.c:37\l
+  %0 = load i32, i32* %intNumber.addr, align 4, !dbg !54\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/io.c:37\l
+  %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.4, i64 0, i64 0), i32 %0), !dbg !55\l
+}"];
+	io_ll_printIntLineBB14-> io_ll_printIntLineBB15;
+	io_ll_printIntLineBB15 [shape=record, label="{BB15:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/io.c:38\l
+  ret void, !dbg !56\l
+}"];
+}

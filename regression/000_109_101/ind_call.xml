@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_109_101/source_code/CWE606_Unchecked_Loop_Condition__char_file_44.c:82">
+        <ind_callee funname="badSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="goodB2GSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="goodG2BSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="printLine" funsig="void (*)( char*)"/>
+        <ind_callee funname="printSinkLine" funsig="void (*)( char*)"/>
+    </ind_loc>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_109_101/source_code/CWE606_Unchecked_Loop_Condition__char_file_44.c:116">
+        <ind_callee funname="badSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="goodB2GSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="goodG2BSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="printLine" funsig="void (*)( char*)"/>
+        <ind_callee funname="printSinkLine" funsig="void (*)( char*)"/>
+    </ind_loc>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_109_101/source_code/CWE606_Unchecked_Loop_Condition__char_file_44.c:168">
+        <ind_callee funname="badSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="goodB2GSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="goodG2BSink" funsig="void (*)( char*)"/>
+        <ind_callee funname="printLine" funsig="void (*)( char*)"/>
+        <ind_callee funname="printSinkLine" funsig="void (*)( char*)"/>
+    </ind_loc>
+</Root>

@@ -1,0 +1,31 @@
+digraph "CFG for'CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSink' function" {
+	BBCWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSink_start[shape=record,label="{CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSink_start}"];
+	BBCWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSink_start-> CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSinkBB2;
+	CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSinkBB2 [shape=record, label="{BB2:\l\l/:117419784\l
+  %dataPtr.addr = alloca i8**, align 8\l
+/:117419784\l
+  %data = alloca i8*, align 8\l
+/:117419784\l
+  store i8** %dataPtr, i8*** %dataPtr.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:38\l
+  call void @llvm.dbg.declare(metadata i8*** %dataPtr.addr, metadata !24, metadata !DIExpression()), !dbg !25\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:40\l
+  call void @llvm.dbg.declare(metadata i8** %data, metadata !26, metadata !DIExpression()), !dbg !27\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:40\l
+  %0 = load i8**, i8*** %dataPtr.addr, align 8, !dbg !17\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:40\l
+  %1 = load i8*, i8** %0, align 8, !dbg !18\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:40\l
+  store i8* %1, i8** %data, align 8, !dbg !16\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:42\l
+  %2 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8, !dbg !19\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:42\l
+  %3 = load i8*, i8** %data, align 8, !dbg !20\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:42\l
+  %call = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %2, i8* %3), !dbg !21\l
+}"];
+	CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSinkBB2-> CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSinkBB3;
+	CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_ll_CWE134_Uncontrolled_Format_String__char_console_fprintf_63b_goodG2BSinkBB3 [shape=record, label="{BB3:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_421/source_code/CWE134_Uncontrolled_Format_String__char_console_fprintf_63b.c:43\l
+  ret void, !dbg !22\l
+}"];
+}

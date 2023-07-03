@@ -1,0 +1,7 @@
+digraph "CFG for'io_ll_globalReturnsTrue' function" {
+	BBio_ll_globalReturnsTrue_start[shape=record,label="{io_ll_globalReturnsTrue_start}"];
+	BBio_ll_globalReturnsTrue_start-> io_ll_globalReturnsTrueBB65;
+	io_ll_globalReturnsTrueBB65 [shape=record, label="{BB65:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_940/source_code/io.c:158\l
+  ret i32 1, !dbg !52\l
+}"];
+}

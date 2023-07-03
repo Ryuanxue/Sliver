@@ -1,0 +1,23 @@
+digraph "CFG for'all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_good' function" {
+	BBall_ll_CWE606_Unchecked_Loop_Condition__char_console_06_good_start[shape=record,label="{all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_good_start}"];
+	BBall_ll_CWE606_Unchecked_Loop_Condition__char_console_06_good_start-> all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB111;
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB111 [shape=record, label="{BB111:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_983/source_code/CWE606_Unchecked_Loop_Condition__char_console_06.c:274\l
+  call void @goodB2G1(), !dbg !58\l
+}"];
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB111-> all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB112;
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB112 [shape=record, label="{BB112:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_983/source_code/CWE606_Unchecked_Loop_Condition__char_console_06.c:275\l
+  call void @goodB2G2(), !dbg !59\l
+}"];
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB112-> all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB113;
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB113 [shape=record, label="{BB113:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_983/source_code/CWE606_Unchecked_Loop_Condition__char_console_06.c:276\l
+  call void @goodG2B1(), !dbg !60\l
+}"];
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB113-> all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB114;
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB114 [shape=record, label="{BB114:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_983/source_code/CWE606_Unchecked_Loop_Condition__char_console_06.c:277\l
+  call void @goodG2B2(), !dbg !61\l
+}"];
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB114-> all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB115;
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_06_goodBB115 [shape=record, label="{BB115:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_983/source_code/CWE606_Unchecked_Loop_Condition__char_console_06.c:278\l
+  ret void, !dbg !62\l
+}"];
+}

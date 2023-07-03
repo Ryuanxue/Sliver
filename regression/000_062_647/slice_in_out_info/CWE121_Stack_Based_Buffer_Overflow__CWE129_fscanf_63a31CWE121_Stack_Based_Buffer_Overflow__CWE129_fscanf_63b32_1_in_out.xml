@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="31"/>
+ <in_funname value="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63_bad"/>
+ <slicefun funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63a31CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63b32_1"/>
+ <srcfun funname="fscanf"/>
+ <out_line value="32"/>
+ <out_funname value="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63b_badSink"/>
+ <in_file value="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63a.c"/>
+ <src_sta value="fscanf(stdin, &quot;%d&quot;, &amp;_CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63_bad_data_0)"/>
+ <out_file value="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63b.c"/>
+ <in_vars>
+  <in_var rawname="data" newname="_CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63_bad_data_0" kind="basic" type="int"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="data" newname="_CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63b_badSink_data_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63a31CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63b32_1"/>
+ <gen_fun_params>
+  <param name="_CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63_bad_data_0" kind="basic" type="int"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_062_647/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63a.c"/>
+  <fun funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63b_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_062_647/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_63b.c"/>
+ </funsig>
+ <Gvars/>
+</root>

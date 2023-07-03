@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="101"/>
+ <in_funname value="CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad"/>
+ <slicefun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_54a101CWE606_Unchecked_Loop_Condition__char_listen_socket_54e57_1"/>
+ <srcfun funname="recv"/>
+ <out_line value="57"/>
+ <out_funname value="CWE606_Unchecked_Loop_Condition__char_listen_socket_54e_badSink"/>
+ <in_file value="CWE606_Unchecked_Loop_Condition__char_listen_socket_54a.c"/>
+ <src_sta value="_CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad_recvResult_0 = recv(_CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad_acceptSocket_0, (char *) (_CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad_data_0 + _CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad_dataLen_0), (sizeof(char)) * ((100 - _CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad_dataLen_0) - 1), 0)"/>
+ <out_file value="CWE606_Unchecked_Loop_Condition__char_listen_socket_54e.c"/>
+ <in_vars>
+  <in_var rawname="data" newname="_CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad_data_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="n" newname="_CWE606_Unchecked_Loop_Condition__char_listen_socket_54e_badSink_n_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE606_Unchecked_Loop_Condition__char_listen_socket_54a101CWE606_Unchecked_Loop_Condition__char_listen_socket_54e57_1"/>
+ <gen_fun_params>
+  <param name="_CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad_data_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_54_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_154/source_code/CWE606_Unchecked_Loop_Condition__char_listen_socket_54a.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_54b_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_154/source_code/CWE606_Unchecked_Loop_Condition__char_listen_socket_54b.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_54c_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_154/source_code/CWE606_Unchecked_Loop_Condition__char_listen_socket_54c.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_54d_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_154/source_code/CWE606_Unchecked_Loop_Condition__char_listen_socket_54d.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_54e_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_154/source_code/CWE606_Unchecked_Loop_Condition__char_listen_socket_54e.c"/>
+ </funsig>
+ <Gvars/>
+</root>

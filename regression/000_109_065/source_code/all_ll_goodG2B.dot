@@ -1,0 +1,47 @@
+digraph "CFG for'all_ll_goodG2B' function" {
+	BBall_ll_goodG2B_start[shape=record,label="{all_ll_goodG2B_start}"];
+	BBall_ll_goodG2B_start-> all_ll_goodG2BBB7;
+	all_ll_goodG2BBB7 [shape=record, label="{BB7:\l\l/:99479800\l
+  %data = alloca i8*, align 8\l
+/:99479800\l
+  %myStruct = alloca %struct._CWE606_Unchecked_Loop_Condition__char_environment_67_structType, align 8\l
+/:99479800\l
+  %dataBuffer = alloca [100 x i8], align 16\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:69\l
+  call void @llvm.dbg.declare(metadata i8** %data, metadata !104, metadata !DIExpression()), !dbg !105\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:70\l
+  call void @llvm.dbg.declare(metadata %struct._CWE606_Unchecked_Loop_Condition__char_environment_67_structType* %myStruct, metadata !106, metadata !DIExpression()), !dbg !107\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:71\l
+  call void @llvm.dbg.declare(metadata [100 x i8]* %dataBuffer, metadata !108, metadata !DIExpression()), !dbg !109\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:71\l
+  %0 = bitcast [100 x i8]* %dataBuffer to i8*, !dbg !70\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:71\l
+  call void @llvm.memset.p0i8.i64(i8* align 16 %0, i8 0, i64 100, i1 false), !dbg !70\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:72\l
+  %arraydecay = getelementptr inbounds [100 x i8], [100 x i8]* %dataBuffer, i64 0, i64 0, !dbg !71\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:72\l
+  store i8* %arraydecay, i8** %data, align 8, !dbg !72\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:74\l
+  %1 = load i8*, i8** %data, align 8, !dbg !73\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:74\l
+  %call = call i8* @strcpy(i8* %1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0)) #7, !dbg !74\l
+}"];
+	all_ll_goodG2BBB7-> all_ll_goodG2BBB8;
+	all_ll_goodG2BBB8 [shape=record, label="{BB8:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:75\l
+  %2 = load i8*, i8** %data, align 8, !dbg !75\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:75\l
+  %structFirst = getelementptr inbounds %struct._CWE606_Unchecked_Loop_Condition__char_environment_67_structType, %struct._CWE606_Unchecked_Loop_Condition__char_environment_67_structType* %myStruct, i32 0, i32 0, !dbg !76\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:75\l
+  store i8* %2, i8** %structFirst, align 8, !dbg !77\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:76\l
+  %coerce.dive = getelementptr inbounds %struct._CWE606_Unchecked_Loop_Condition__char_environment_67_structType, %struct._CWE606_Unchecked_Loop_Condition__char_environment_67_structType* %myStruct, i32 0, i32 0, !dbg !78\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:76\l
+  %3 = load i8*, i8** %coerce.dive, align 8, !dbg !78\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:76\l
+  call void @CWE606_Unchecked_Loop_Condition__char_environment_67b_goodG2BSink(i8* %3), !dbg !78\l
+}"];
+	all_ll_goodG2BBB8-> all_ll_goodG2BBB9;
+	all_ll_goodG2BBB9 [shape=record, label="{BB9:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_065/source_code/CWE606_Unchecked_Loop_Condition__char_environment_67a.c:77\l
+  ret void, !dbg !79\l
+}"];
+}

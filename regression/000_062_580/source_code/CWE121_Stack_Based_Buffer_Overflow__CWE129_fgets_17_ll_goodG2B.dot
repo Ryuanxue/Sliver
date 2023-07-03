@@ -1,0 +1,163 @@
+digraph "CFG for'CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2B' function" {
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2B_start[shape=record,label="{CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2B_start}"];
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2B_start-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB49;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB49 [shape=record, label="{BB49:\l\l/:101142856\l
+  %h = alloca i32, align 4\l
+/:101142856\l
+  %j = alloca i32, align 4\l
+/:101142856\l
+  %data = alloca i32, align 4\l
+/:101142856\l
+  %i = alloca i32, align 4\l
+/:101142856\l
+  %buffer = alloca [10 x i32], align 16\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:124\l
+  call void @llvm.dbg.declare(metadata i32* %h, metadata !190, metadata !DIExpression()), !dbg !191\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:124\l
+  call void @llvm.dbg.declare(metadata i32* %j, metadata !192, metadata !DIExpression()), !dbg !193\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:125\l
+  call void @llvm.dbg.declare(metadata i32* %data, metadata !194, metadata !DIExpression()), !dbg !195\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:127\l
+  store i32 -1, i32* %data, align 4, !dbg !19\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  store i32 0, i32* %h, align 4, !dbg !20\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  br label %for.cond, !dbg !22\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB49-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB50;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB50 [shape=record, label="{BB50:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  %0 = load i32, i32* %h, align 4, !dbg !23\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  %cmp = icmp slt i32 %0, 1, !dbg !25\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  br i1 %cmp, label %for.body, label %for.end, !dbg !26\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB50-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB51;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB50-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB52;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB51 [shape=record, label="{BB51:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:132\l
+  store i32 7, i32* %data, align 4, !dbg !27\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:133\l
+  br label %for.inc, !dbg !29\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB51-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB53;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB53 [shape=record, label="{BB53:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  %1 = load i32, i32* %h, align 4, !dbg !30\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  %inc = add nsw i32 %1, 1, !dbg !30\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  store i32 %inc, i32* %h, align 4, !dbg !30\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:128\l
+  br label %for.cond, !dbg !31, !llvm.loop !32\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB53-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB50;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB52 [shape=record, label="{BB52:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  store i32 0, i32* %j, align 4, !dbg !35\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  br label %for.cond1, !dbg !37\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB52-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB54;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB54 [shape=record, label="{BB54:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  %2 = load i32, i32* %j, align 4, !dbg !38\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  %cmp2 = icmp slt i32 %2, 1, !dbg !40\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  br i1 %cmp2, label %for.body3, label %for.end15, !dbg !41\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB54-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB55;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB54-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB56;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB55 [shape=record, label="{BB55:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:137\l
+  call void @llvm.dbg.declare(metadata i32* %i, metadata !218, metadata !DIExpression()), !dbg !221\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:138\l
+  call void @llvm.dbg.declare(metadata [10 x i32]* %buffer, metadata !222, metadata !DIExpression()), !dbg !223\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:138\l
+  %3 = bitcast [10 x i32]* %buffer to i8*, !dbg !50\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:138\l
+  call void @llvm.memset.p0i8.i64(i8* align 16 %3, i8 0, i64 40, i1 false), !dbg !50\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:141\l
+  %4 = load i32, i32* %data, align 4, !dbg !51\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:141\l
+  %cmp4 = icmp sge i32 %4, 0, !dbg !53\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:141\l
+  br i1 %cmp4, label %if.then, label %if.else, !dbg !54\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB55-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB57;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB55-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB58;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB57 [shape=record, label="{BB57:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:143\l
+  %5 = load i32, i32* %data, align 4, !dbg !55\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:143\l
+  %idxprom = sext i32 %5 to i64, !dbg !57\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:143\l
+  %arrayidx = getelementptr inbounds [10 x i32], [10 x i32]* %buffer, i64 0, i64 %idxprom, !dbg !57\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:143\l
+  store i32 1, i32* %arrayidx, align 4, !dbg !58\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  store i32 0, i32* %i, align 4, !dbg !59\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  br label %for.cond5, !dbg !61\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB57-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB59;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB59 [shape=record, label="{BB59:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  %6 = load i32, i32* %i, align 4, !dbg !62\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  %cmp6 = icmp slt i32 %6, 10, !dbg !64\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  br i1 %cmp6, label %for.body7, label %for.end12, !dbg !65\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB59-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB60;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB59-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB61;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB60 [shape=record, label="{BB60:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:147\l
+  %7 = load i32, i32* %i, align 4, !dbg !66\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:147\l
+  %idxprom8 = sext i32 %7 to i64, !dbg !68\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:147\l
+  %arrayidx9 = getelementptr inbounds [10 x i32], [10 x i32]* %buffer, i64 0, i64 %idxprom8, !dbg !68\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:147\l
+  %8 = load i32, i32* %arrayidx9, align 4, !dbg !68\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:147\l
+  call void @printIntLine(i32 %8), !dbg !69\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB60-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB62;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB62 [shape=record, label="{BB62:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:148\l
+  br label %for.inc10, !dbg !70\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB62-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB63;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB63 [shape=record, label="{BB63:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  %9 = load i32, i32* %i, align 4, !dbg !71\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  %inc11 = add nsw i32 %9, 1, !dbg !71\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  store i32 %inc11, i32* %i, align 4, !dbg !71\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:145\l
+  br label %for.cond5, !dbg !72, !llvm.loop !73\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB63-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB59;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB61 [shape=record, label="{BB61:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:149\l
+  br label %if.end, !dbg !75\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB61-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB64;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB58 [shape=record, label="{BB58:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:152\l
+  call void @printLine(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.1, i64 0, i64 0)), !dbg !76\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB58-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB65;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB65 [shape=record, label="{BB65:\l\l/:152\l
+  br label %if.end\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB65-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB64;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB64 [shape=record, label="{BB64:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:155\l
+  br label %for.inc13, !dbg !78\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB64-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB66;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB66 [shape=record, label="{BB66:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  %10 = load i32, i32* %j, align 4, !dbg !79\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  %inc14 = add nsw i32 %10, 1, !dbg !79\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  store i32 %inc14, i32* %j, align 4, !dbg !79\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:134\l
+  br label %for.cond1, !dbg !80, !llvm.loop !81\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB66-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB54;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17_ll_goodG2BBB56 [shape=record, label="{BB56:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_580/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_17.c:156\l
+  ret void, !dbg !83\l
+}"];
+}

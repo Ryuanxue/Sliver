@@ -1,0 +1,17 @@
+digraph "CFG for'CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_goodG2BSource' function" {
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_goodG2BSource_start[shape=record,label="{CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_goodG2BSource_start}"];
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_goodG2BSource_start-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_goodG2BSourceBB27;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b_goodG2BSourceBB27 [shape=record, label="{BB27:\l\l/:93876648\l
+  %data.addr = alloca i32, align 4\l
+/:93876648\l
+  store i32 %data, i32* %data.addr, align 4\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_741/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b.c:123\l
+  call void @llvm.dbg.declare(metadata i32* %data.addr, metadata !184, metadata !DIExpression()), !dbg !185\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_741/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b.c:127\l
+  store i32 7, i32* %data.addr, align 4, !dbg !75\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_741/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b.c:128\l
+  %0 = load i32, i32* %data.addr, align 4, !dbg !76\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_741/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_61b.c:128\l
+  ret i32 %0, !dbg !77\l
+}"];
+}

@@ -1,0 +1,400 @@
+#include "raw_input_instruction_file.hh"
+static cl::opt<std::string> getxmlfilename("in-xml-file", cl::desc("Specify xml filename for mypass"), cl::value_desc("xml-filename"));
+
+Instruction* sliver::RawInputInstructionFile::insertOnMainEntryBlock(BasicBlock &F, Module &M,Instruction *in) 
+{
+
+    // FILE * pFile;
+    // FILE * fopen ( const char * , const char *  );
+    //创建文件指针，打开文件，返回文件指针，判断文件打开是否成功
+
+    FunctionCallee funcall1= M.getOrInsertFunction("fopen",
+                                                IO_FILE_PTR_ty,
+                                                Type::getInt8PtrTy(F.getContext()),
+                                                Type::getInt8PtrTy(F.getContext())
+                                                );
+    Value* const_fopen =funcall1.getCallee();
+    Function *func_fopen = dyn_cast<Function>(const_fopen);
+
+    // //Create a global string variable with the file's name
+    Constant* strfileConstant = ConstantDataArray::getString(
+                                                    M.getContext(),
+                                                    "raw_input.txt",
+                                                    true);
+
+    GlobalVariable* fileStr = new GlobalVariable(M,
+                                        strfileConstant->getType(),
+                                        true,
+                                        llvm::GlobalValue::InternalLinkage , 
+                                        strfileConstant,
+                                        "testTxt");
+
+
+    //Get the int8ptr to our message
+    Constant* constZeroF = ConstantInt::get(Type::getInt32Ty(M.getContext()), 0);
+    Constant* constArrayF = ConstantExpr::getInBoundsGetElementPtr(strfileConstant->getType(),fileStr, constZeroF);
+    Value* filePtr = ConstantExpr::getBitCast(constArrayF, PointerType::getUnqual(Type::getInt8Ty(M.getContext())));
+
+    // //Create a global strin g variable with the format's name
+    Constant* strFormatConstant = ConstantDataArray::getString( M.getContext(),
+                                                                "a+",
+                                                                true);
+
+    GlobalVariable* formatStr = new GlobalVariable(M,
+                                    strFormatConstant->getType(),
+                                    true,
+                                    llvm::GlobalValue::InternalLinkage,
+                                    strFormatConstant,
+                                    "a+");
+
+    // // Get the int8ptr to our message
+    Constant* constZeroFmt  = ConstantInt::get(Type::getInt32Ty(M.getContext()), 0);
+    Constant* constArrayFmt = ConstantExpr::getInBoundsGetElementPtr(strFormatConstant->getType(),formatStr, constZeroFmt);
+    Value* fmtPtr = ConstantExpr::getBitCast(constArrayFmt, PointerType::getUnqual(Type::getInt8Ty(M.getContext())));
+
+    vector<Value*> args;
+    args.push_back(filePtr);
+    args.push_back(fmtPtr);
+    IRBuilder<> builder(M.getContext());
+    builder.SetInsertPoint(in);
+    Instruction *allcapfile =builder.CreateAlloca(IO_FILE_PTR_ty,nullptr,"pFile");
+    Instruction *fopen= builder.CreateCall(func_fopen, args, "fopen");
+    /**
+    判断文件打开是否成功，文件打开失败怎么处理
+    **/
+    builder.CreateStore(fopen,allcapfile);
+    return allcapfile;
+}
+
+       
+
+
+template <class T>
+int sliver::RawInputInstructionFile::get_Aggre_size(T *dit)
+{
+    if(DIDerivedType *didt=dyn_cast<DIDerivedType>(dit))
+    {
+    /**
+         * tag的值对应的意义
+         * tag:22  DW_TAG_typedef
+         * tag:15  DW_TAG_pointer_type,
+         * tag:38   DW_TAG_const_type,
+         * */
+        const MDOperand &opp=didt->getOperand(3) ;      
+        return get_Aggre_size(&*opp);
+            
+    }else if(DICompositeType *dict=dyn_cast<DICompositeType>(dit))
+    {
+        int size=dict->getSizeInBits()/8;
+        return size;
+    }
+}
+
+       
+
+string sliver::RawInputInstructionFile::strip_varname(string str)
+{
+    size_t pos=0;
+    pos = str.find(".");
+    if (pos == string::npos)
+        return str;
+    else
+        return str.substr(0,pos);
+}
+
+
+bool sliver::RawInputInstructionFile::runOnModule(Module &M) 
+{
+     string xmlfilename;
+    for(auto &e : getxmlfilename) 
+    {
+        string s(1,e);
+        xmlfilename.append(s);         
+    }
+    errs()<<M.getName().str()<<"\n";
+    //判断模块中有无FILE结构体
+    LLVMContextImpl* C = M.getContext().pImpl;
+    if (StructType *filetype= C->NamedStructTypes.lookup("struct._IO_FILE"))
+    {
+        IO_FILE_ty=filetype;
+    }else
+    {
+        IO_FILE_ty = StructType::create(M.getContext(), "struct._IO_FILE");
+    }
+	IO_FILE_PTR_ty = PointerType::getUnqual(IO_FILE_ty);
+    //解析xml文件
+    //获得行号，函数名，参数列表
+    
+    const char* xmlPath=xmlfilename.c_str();
+    XMLDocument doc;
+    XMLElement * root ;
+    ifstream fin(xmlPath);
+    if(fin)
+    {
+        XMLError error = doc.LoadFile(xmlPath);
+        if (error != XMLError::XML_SUCCESS)
+            return false;
+
+        root = doc.RootElement();
+        XMLElement* current;
+        current = root->FirstChildElement("in_vars");
+        for (XMLElement* curr = current->FirstChildElement(); curr != nullptr; curr = curr->NextSiblingElement())
+        {
+            int linenum; //行号
+            string funname;//函数名
+            std::vector<XMLElement*> in_var_list;//参数列表
+            in_var_list.push_back(curr);
+            string strline=curr->Attribute("line");
+            linenum=atoi(strline.c_str());
+            string newname=curr->Attribute("newname");
+            string rawname=curr->Attribute("rawname");
+            errs()<<newname<<"\n";
+            errs()<<rawname<<"\n";
+            int ind=newname.find(rawname);
+            funname=newname.substr(1,ind-2);
+            errs()<<funname<<"\n";
+            errs()<<linenum<<"\n";
+              //找到插装位置
+        for(Module::iterator F = M.begin(), E = M.end(); F!= E; ++F) //函数
+        {
+            string fun=F->getName().str();
+            if (fun!=funname)
+                continue;
+
+            //获得函数中所有的alloca语句
+            map<string,Value*> allocamap;
+            map<Value*,DILocalVariable*> alloca_metadata_map;
+            // vector<int> lineset;
+            for (auto bb_iter=F->begin();bb_iter!=F->end();++bb_iter)//基本块
+            {
+                for (auto ins_iter=bb_iter->begin();ins_iter!=bb_iter->end();++ins_iter)//指令
+                {
+                    Instruction *inst=&*ins_iter;
+                    // if (DILocation *Loc = inst->getDebugLoc())
+                    // {                                                               
+                    //     int Line = Loc->getLine();
+                    //     auto it=find(lineset,Line);
+                    //     if (it==lineset.end())
+                    //         lineset.push_back(Line);
+                    // }
+                    if(AllocaInst *alloinst=dyn_cast<AllocaInst>(inst))
+                    {
+                        string varname=strip_varname(alloinst->getName().str());
+                        Value *allval=dyn_cast<Value>(alloinst);
+                        allocamap[varname]=allval;
+                    }else if(DbgDeclareInst *dbginst=dyn_cast<DbgDeclareInst>(inst))
+                    {
+                        Value* ai = dbginst->getVariableLocation();
+                        DILocalVariable *di_local_var = dbginst->getVariable();
+                        alloca_metadata_map[ai]=di_local_var;
+                    }
+        
+
+                }
+            }
+
+            // std::sort(lineset.begin(), lineset.begin()+lineset.size());
+            // for(int item: lineset)
+            //     errs() << item << " ";
+            // int ind=-1;
+            // for (auto i = 0; i < lineset.size(); ++i) 
+            // {
+            //     if (lineset[i] == linenum)
+            //         ind=i;
+            //     }
+            // int newlinenum=lineset.at(ind+1);
+            int newlinenum=linenum;
+            for (auto bb_iter=F->begin();bb_iter!=F->end();++bb_iter)//基本块
+            {
+                for (auto ins_iter=bb_iter->begin();ins_iter!=bb_iter->end();++ins_iter)//指令
+                {
+
+                    unsigned Line;
+                    if (DILocation *Loc = ins_iter->getDebugLoc())
+                    {
+                                                                            
+                        Line = Loc->getLine();
+                     
+                    }
+                    if (Line==newlinenum )
+                    {
+                        //返回FILE *fp
+                        Instruction *inst=&*ins_iter;
+                        BranchInst *brinst=dyn_cast<BranchInst>(inst);
+	                    if(!brinst)continue;
+	                    
+	                    BasicBlock *onebblock=brinst->getSuccessor(0);
+	                    BasicBlock *twobblock=brinst->getSuccessor(1);
+	                    errs()<<*twobblock<<"\n";
+
+	                    Instruction *fisrtinst=twobblock->getFirstNonPHI();
+                        Instruction *pfilealloca= insertOnMainEntryBlock(*bb_iter, M,&*ins_iter);//fopen
+                        //insertprintf(BI,*(BI->getModule ()),incval,pfilealloca,File,Line,con_int);
+                        //对in_var_list进行循环处理，输出相应的数据块到文件
+                        //4个参数
+                        //循环遍历in_val_list
+                        IRBuilder<> builder(M.getContext());
+                        builder.SetInsertPoint(fisrtinst);
+                        Function* func_fwite;
+                        // const DataLayout* TD = new DataLayout(M);
+                        for (auto in_it=in_var_list.begin();in_it!=in_var_list.end();in_it++)
+                        {
+
+                            XMLElement *curr=*in_it;
+                            string kind=curr->Attribute("kind");
+                            string varname=curr->Attribute("rawname");
+                            auto it = allocamap.find(varname);
+                            if (it != allocamap.end())
+                            {
+                                Value *ptrValue_alloca=allocamap[varname];
+                                Value *ptrValue_load;
+                                Type *allotype=dyn_cast<AllocaInst> (ptrValue_alloca)->getAllocatedType ();
+                                Value *ptrvalue_bitcast;
+                                int size;
+                                if (kind=="basic")
+                                {
+                                     ptrvalue_bitcast=builder.CreateLoad(ptrValue_alloca);
+
+                                    // size=allotype->getIntegerBitWidth()/8;
+                                    // ptrvalue_bitcast= builder.CreateBitCast(ptrValue_alloca,Type::getInt8PtrTy(M.getContext()));
+                                }else if(kind=="one_ptr")
+                                {
+                                    Type *temptype=dyn_cast<PointerType>(allotype)->getElementType();
+                                    if(temptype->isStructTy())
+                                    {
+                                        DILocalVariable *divar=alloca_metadata_map[ptrValue_alloca];
+                                        // errs()<<*divar<<"\n";
+                                        DIType *dit=divar->getType();
+                                        size=get_Aggre_size(dit);
+                                    }
+                                        
+                                    else if(temptype->isIntegerTy())
+                                    {
+
+                                        size=dyn_cast<IntegerType>(temptype)->getIntegerBitWidth()/8;
+
+                                    }else if(temptype->isArrayTy())
+                                    {
+                                        DILocalVariable *divar=alloca_metadata_map[ptrValue_alloca];
+                                        DIType *dit=divar->getType();
+                                        size=get_Aggre_size(dit);
+                                    }
+
+                                    ptrValue_load=builder.CreateLoad(ptrValue_alloca);
+                                    ptrvalue_bitcast= builder.CreateBitCast(ptrValue_load,Type::getInt8PtrTy(M.getContext()));                                       
+                                }
+                                else if(kind=="one_arr")
+                                {
+                                    size=0;
+                                    //获得数组的类型 allotype
+                                    //allo VALUE ptptrValue_alloca 
+                                    //创建 ArrayRef< Value * > 
+                                    Value *i64zero = ConstantInt::get(M.getContext(), APInt(64, 0));
+                                    Value *indices[2] = {i64zero, i64zero};
+                                    ptrValue_load=builder.CreateInBoundsGEP(ptrValue_alloca, ArrayRef<Value *>(indices, 2));
+                                    ptrvalue_bitcast= builder.CreateBitCast(ptrValue_load,Type::getInt8PtrTy(M.getContext()));                                       
+
+                                    
+                                    // cout<<"without dealed..."<<endl;
+                                }
+                                else
+                                {
+                                    size=0;
+                                    
+                                    cout<<"without dealed..."<<endl;
+                                }
+                                //创建fputs
+
+                                Value *sourceFormat;
+                                // Value *source;
+                                if (kind=="basic")
+                                sourceFormat=builder.CreateGlobalStringPtr(newname+":%d\n");//创建全局字符串常量
+                                    //sourceFormat = builder.CreateGlobalStringPtr(newname:%d\n");
+                                else
+                                    sourceFormat=builder.CreateGlobalStringPtr(newname+":%s\n");//创建全局字符串常量
+                                    //sourceFormat = builder.CreateGlobalStringPtr(newname:%s\n");
+
+                            FunctionCallee fun_fprintf=M.getOrInsertFunction("fprintf",
+                                Type::getInt32Ty(M.getContext()),
+                                IO_FILE_PTR_ty,
+                                sourceFormat->getType(),
+                                Type::getInt32Ty(M.getContext()));
+                            Value *const_fprintf=fun_fprintf.getCallee();
+                            Function *func_fprintf=cast<Function>(const_fprintf);
+                              vector<Value*> firstcall;//第一次调用
+                            Value* pfile = builder.CreateLoad(pfilealloca);
+                            firstcall.push_back(pfile);
+                            firstcall.push_back(sourceFormat);
+                            firstcall.push_back(ptrvalue_bitcast);
+                            builder.CreateCall(func_fprintf,firstcall,"fprintf");
+
+                                // Value* source=builder.CreateGlobalStringPtr(newname+":");//创建全局字符串常量
+                                // FunctionCallee fun_fputs= M.getOrInsertFunction("fputs",
+                                //             Type::getInt8PtrTy(M.getContext()),//返回值
+                                //             Type::getInt8PtrTy(M.getContext()),//第一个参数
+                                //             IO_FILE_PTR_ty);
+
+                                // Value* const_fputs=fun_fputs.getCallee();
+                                // Function *func_fputs = cast<Function>(const_fputs);
+                                // //创建输入的参数
+                                // vector<Value*> firstcall;//第一次调用
+                                // Value* pfile = builder.CreateLoad(pfilealloca);
+                                // firstcall.push_back(source);
+                                // firstcall.push_back(pfile);
+                                // builder.CreateCall(func_fputs,firstcall,"fputs");
+                                // //第二次调用
+                                // vector<Value*> secondcall;//第一次调用
+                                // Value* twofile = builder.CreateLoad(pfilealloca);
+                                // secondcall.push_back(ptrvalue_bitcast);
+                                // secondcall.push_back(twofile);
+                                // builder.CreateCall(func_fputs,secondcall,"fputs");
+                                // //第三次调用
+                                // Value* endline=builder.CreateGlobalStringPtr("\n");//创建全局字符串常量
+                                // vector<Value*> thirdcall;//第一次调用
+                                // Value* threefile = builder.CreateLoad(pfilealloca);
+                                // thirdcall.push_back(endline);
+                                // thirdcall.push_back(threefile);
+                                // builder.CreateCall(func_fputs,thirdcall,"fputs");
+
+                            }
+                        }
+                        //关闭文件
+                        FunctionCallee funcall2= M.getOrInsertFunction("fclose",
+                                            Type::getInt32Ty(M.getContext()),
+                                                                    IO_FILE_PTR_ty);
+                        Value* const_fclose =funcall2.getCallee();
+                        Function *func_fclose = cast<Function>(const_fclose);
+                        errs()<<*func_fclose<<"\n";
+                        Value* fw_load = builder.CreateLoad(pfilealloca);
+                        builder.CreateCall(func_fclose, fw_load);
+                        break;
+                    }
+
+                }
+            }
+        }
+        }
+        // errs()<<strline<<"\n";
+        // errs()<<linenum<<"\n";
+        // errs()<<funname<<"\n";
+
+    }
+    else
+    {
+        errs()<<xmlPath<<" is not existens\n";
+        return false;
+    }
+
+
+
+  
+
+	
+	return false;
+}
+			
+	
+
+char sliver::RawInputInstructionFile::ID = 0;
+static RegisterPass<sliver::RawInputInstructionFile> X("in-inst-file", "proprecess Analyse",
+	false, false);

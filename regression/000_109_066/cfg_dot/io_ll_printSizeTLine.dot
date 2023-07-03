@@ -1,0 +1,19 @@
+digraph "CFG for'io_ll_printSizeTLine' function" {
+	BBio_ll_printSizeTLine_start[shape=record,label="{io_ll_printSizeTLine_start}"];
+	BBio_ll_printSizeTLine_start-> io_ll_printSizeTLineBB24;
+	io_ll_printSizeTLineBB24 [shape=record, label="{BB24:\l\l/:2922297856\l
+  %sizeTNumber.addr = alloca i64, align 8\l
+/:2922297856\l
+  store i64 %sizeTNumber, i64* %sizeTNumber.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_066/source_code/io.c:60\l
+  call void @llvm.dbg.declare(metadata i64* %sizeTNumber.addr, metadata !146, metadata !DIExpression()), !dbg !147\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_066/source_code/io.c:62\l
+  %0 = load i64, i64* %sizeTNumber.addr, align 8, !dbg !57\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_066/source_code/io.c:62\l
+  %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.8, i64 0, i64 0), i64 %0), !dbg !58\l
+}"];
+	io_ll_printSizeTLineBB24-> io_ll_printSizeTLineBB25;
+	io_ll_printSizeTLineBB25 [shape=record, label="{BB25:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_066/source_code/io.c:63\l
+  ret void, !dbg !59\l
+}"];
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="n" newname="_CWE606_Unchecked_Loop_Condition__char_listen_socket_22_badSink_n_0" kind="basic" type="int"/>
+ <global name="CWE606_Unchecked_Loop_Condition__char_listen_socket_22_badGlobal" newname="CWE606_Unchecked_Loop_Condition__char_listen_socket_22_badGlobal" kind="basic" type="int"/>
+</root>

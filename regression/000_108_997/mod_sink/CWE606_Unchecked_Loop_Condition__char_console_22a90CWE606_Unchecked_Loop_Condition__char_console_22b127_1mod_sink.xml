@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="n" newname="_CWE606_Unchecked_Loop_Condition__char_console_22_goodG2BSink_n_0" kind="basic" type="int"/>
+ <global name="CWE606_Unchecked_Loop_Condition__char_console_22_goodB2G1Global" newname="CWE606_Unchecked_Loop_Condition__char_console_22_goodB2G1Global" kind="basic" type="int"/>
+ <global name="CWE606_Unchecked_Loop_Condition__char_console_22_goodG2BGlobal" newname="CWE606_Unchecked_Loop_Condition__char_console_22_goodG2BGlobal" kind="basic" type="int"/>
+</root>

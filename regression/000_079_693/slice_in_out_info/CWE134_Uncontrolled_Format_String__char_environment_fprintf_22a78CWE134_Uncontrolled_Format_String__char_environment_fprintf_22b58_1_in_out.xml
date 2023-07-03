@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="78"/>
+ <in_funname value="goodB2G1"/>
+ <slicefun funname="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22a78CWE134_Uncontrolled_Format_String__char_environment_fprintf_22b58_1"/>
+ <srcfun funname="getenv"/>
+ <out_line value="58"/>
+ <out_funname value="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22_goodB2G1Sink"/>
+ <in_file value="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22a.c"/>
+ <src_sta value="_goodB2G1_environment_0 = getenv(&quot;ADD&quot;)"/>
+ <out_file value="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22b.c"/>
+ <in_vars>
+  <in_var rawname="environment" newname="_goodB2G1_environment_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="data" newname="_goodB2G1_data_0" kind="one_ptr" type="char"/>
+ </out_vars>
+ <gen_fun value="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22a78CWE134_Uncontrolled_Format_String__char_environment_fprintf_22b58_1"/>
+ <gen_fun_params>
+  <param name="_goodB2G1_environment_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="goodB2G1" file="/home/raoxue/Desktop/MemVerif/workspace/000_079_693/source_code/CWE134_Uncontrolled_Format_String__char_environment_fprintf_22a.c"/>
+  <fun funname="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22_goodB2G1Sink" file="/home/raoxue/Desktop/MemVerif/workspace/000_079_693/source_code/CWE134_Uncontrolled_Format_String__char_environment_fprintf_22b.c"/>
+ </funsig>
+ <Gvars>
+  <gvar name="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22_goodB2G1Global"/>
+ </Gvars>
+</root>

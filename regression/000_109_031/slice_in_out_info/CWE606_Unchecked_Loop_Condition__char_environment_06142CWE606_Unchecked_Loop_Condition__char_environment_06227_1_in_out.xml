@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="142"/>
+ <in_funname value="goodB2G2"/>
+ <slicefun funname="CWE606_Unchecked_Loop_Condition__char_environment_06142CWE606_Unchecked_Loop_Condition__char_environment_06227_1"/>
+ <srcfun funname="getenv"/>
+ <out_line value="227"/>
+ <out_funname value="goodG2B2"/>
+ <in_file value="CWE606_Unchecked_Loop_Condition__char_environment_06.c"/>
+ <src_sta value="_goodB2G2_environment_0 = getenv(&quot;ADD&quot;)"/>
+ <out_file value="CWE606_Unchecked_Loop_Condition__char_environment_06.c"/>
+ <in_vars>
+  <in_var rawname="environment" newname="_goodB2G2_environment_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="n" newname="_goodG2B2_n_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE606_Unchecked_Loop_Condition__char_environment_06142CWE606_Unchecked_Loop_Condition__char_environment_06227_1"/>
+ <gen_fun_params>
+  <param name="_goodB2G2_environment_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="goodB2G2" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_031/source_code/CWE606_Unchecked_Loop_Condition__char_environment_06.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_environment_06_good" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_031/source_code/CWE606_Unchecked_Loop_Condition__char_environment_06.c"/>
+  <fun funname="goodG2B2" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_031/source_code/CWE606_Unchecked_Loop_Condition__char_environment_06.c"/>
+ </funsig>
+ <Gvars>
+  <gvar name="STATIC_CONST_FIVE"/>
+ </Gvars>
+</root>

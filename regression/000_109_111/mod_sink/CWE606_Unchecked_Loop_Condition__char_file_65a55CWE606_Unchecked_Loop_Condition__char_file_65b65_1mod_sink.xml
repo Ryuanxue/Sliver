@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="n" newname="_CWE606_Unchecked_Loop_Condition__char_file_65b_goodG2BSink_n_0" kind="basic" type="int"/>
+</root>

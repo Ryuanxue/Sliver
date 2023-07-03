@@ -1,0 +1,141 @@
+digraph "CFG for'CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1' function" {
+	BBCWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1_start[shape=record,label="{CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1_start}"];
+	BBCWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1_start-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB125;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB125 [shape=record, label="{BB125:\l\l/:88659176\l
+  %data = alloca i8*, align 8\l
+/:88659176\l
+  %dataBuffer = alloca [100 x i8], align 16\l
+/:88659176\l
+  %i = alloca i32, align 4\l
+/:88659176\l
+  %n = alloca i32, align 4\l
+/:88659176\l
+  %intVariable = alloca i32, align 4\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:365\l
+  call void @llvm.dbg.declare(metadata i8** %data, metadata !552, metadata !DIExpression()), !dbg !553\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:366\l
+  call void @llvm.dbg.declare(metadata [100 x i8]* %dataBuffer, metadata !554, metadata !DIExpression()), !dbg !555\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:366\l
+  %0 = bitcast [100 x i8]* %dataBuffer to i8*, !dbg !74\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:366\l
+  call void @llvm.memset.p0i8.i64(i8* align 16 %0, i8 0, i64 100, i1 false), !dbg !74\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:367\l
+  %arraydecay = getelementptr inbounds [100 x i8], [100 x i8]* %dataBuffer, i64 0, i64 0, !dbg !75\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:367\l
+  store i8* %arraydecay, i8** %data, align 8, !dbg !76\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:368\l
+  %call = call i32 @staticReturnsFalse(), !dbg !77\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB125-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB126;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB126 [shape=record, label="{BB126:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:368\l
+  %tobool = icmp ne i32 %call, 0, !dbg !77\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:368\l
+  br i1 %tobool, label %if.then, label %if.else, !dbg !79\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB126-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB127;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB126-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB128;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB127 [shape=record, label="{BB127:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:371\l
+  call void @printLine(i8* getelementptr inbounds ([21 x i8], [21 x i8]* @.str.2, i64 0, i64 0)), !dbg !80\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB127-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB129;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB129 [shape=record, label="{BB129:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:372\l
+  br label %if.end, !dbg !82\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB129-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB130;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB128 [shape=record, label="{BB128:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:376\l
+  %1 = load i8*, i8** %data, align 8, !dbg !83\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:376\l
+  %call1 = call i8* @strcpy(i8* %1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.3, i64 0, i64 0)) #7, !dbg !85\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB128-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB131;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB131 [shape=record, label="{BB131:\l\l/:376\l
+  br label %if.end\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB131-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB130;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB130 [shape=record, label="{BB130:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:378\l
+  %call2 = call i32 @staticReturnsTrue(), !dbg !86\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB130-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB132;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB132 [shape=record, label="{BB132:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:378\l
+  %tobool3 = icmp ne i32 %call2, 0, !dbg !86\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:378\l
+  br i1 %tobool3, label %if.then4, label %if.end10, !dbg !88\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB132-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB133;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB132-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB134;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB133 [shape=record, label="{BB133:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:381\l
+  call void @llvm.dbg.declare(metadata i32* %i, metadata !570, metadata !DIExpression()), !dbg !573\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:381\l
+  call void @llvm.dbg.declare(metadata i32* %n, metadata !574, metadata !DIExpression()), !dbg !575\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:381\l
+  call void @llvm.dbg.declare(metadata i32* %intVariable, metadata !576, metadata !DIExpression()), !dbg !577\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:382\l
+  %2 = load i8*, i8** %data, align 8, !dbg !98\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:382\l
+  %call5 = call i32 (i8*, i8*, ...) @__isoc99_sscanf(i8* %2, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0), i32* %n) #7, !dbg !100\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB133-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB135;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB135 [shape=record, label="{BB135:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:382\l
+  %cmp = icmp eq i32 %call5, 1, !dbg !101\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:382\l
+  br i1 %cmp, label %if.then6, label %if.end9, !dbg !102\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB135-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB136;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB135-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB137;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB136 [shape=record, label="{BB136:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:385\l
+  store i32 0, i32* %intVariable, align 4, !dbg !103\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  store i32 0, i32* %i, align 4, !dbg !105\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  br label %for.cond, !dbg !107\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB136-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB138;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB138 [shape=record, label="{BB138:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  %3 = load i32, i32* %i, align 4, !dbg !108\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  %4 = load i32, i32* %n, align 4, !dbg !110\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  %cmp7 = icmp slt i32 %3, %4, !dbg !111\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  br i1 %cmp7, label %for.body, label %for.end, !dbg !112\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB138-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB139;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB138-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB140;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB139 [shape=record, label="{BB139:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:389\l
+  %5 = load i32, i32* %intVariable, align 4, !dbg !113\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:389\l
+  %inc = add nsw i32 %5, 1, !dbg !113\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:389\l
+  store i32 %inc, i32* %intVariable, align 4, !dbg !113\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:390\l
+  br label %for.inc, !dbg !115\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB139-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB141;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB141 [shape=record, label="{BB141:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  %6 = load i32, i32* %i, align 4, !dbg !116\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  %inc8 = add nsw i32 %6, 1, !dbg !116\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  store i32 %inc8, i32* %i, align 4, !dbg !116\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:386\l
+  br label %for.cond, !dbg !117, !llvm.loop !118\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB141-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB138;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB140 [shape=record, label="{BB140:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:391\l
+  %7 = load i32, i32* %intVariable, align 4, !dbg !121\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:391\l
+  call void @printIntLine(i32 %7), !dbg !122\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB140-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB142;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB142 [shape=record, label="{BB142:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:392\l
+  br label %if.end9, !dbg !123\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB142-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB137;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB137 [shape=record, label="{BB137:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:394\l
+  br label %if.end10, !dbg !124\l
+}"];
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB137-> CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB134;
+	CWE606_Unchecked_Loop_Condition__char_connect_socket_08_ll_goodG2B1BB134 [shape=record, label="{BB134:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_937/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_08.c:395\l
+  ret void, !dbg !125\l
+}"];
+}

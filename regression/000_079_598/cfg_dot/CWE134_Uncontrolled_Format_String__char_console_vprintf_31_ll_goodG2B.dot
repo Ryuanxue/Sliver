@@ -1,0 +1,53 @@
+digraph "CFG for'CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2B' function" {
+	BBCWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2B_start[shape=record,label="{CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2B_start}"];
+	BBCWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2B_start-> CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2BBB18;
+	CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2BBB18 [shape=record, label="{BB18:\l\l/:104463784\l
+  %data = alloca i8*, align 8\l
+/:104463784\l
+  %dataBuffer = alloca [100 x i8], align 16\l
+/:104463784\l
+  %dataCopy = alloca i8*, align 8\l
+/:104463784\l
+  %data1 = alloca i8*, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:94\l
+  call void @llvm.dbg.declare(metadata i8** %data, metadata !128, metadata !DIExpression()), !dbg !129\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:95\l
+  call void @llvm.dbg.declare(metadata [100 x i8]* %dataBuffer, metadata !130, metadata !DIExpression()), !dbg !131\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:95\l
+  %0 = bitcast [100 x i8]* %dataBuffer to i8*, !dbg !21\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:95\l
+  call void @llvm.memset.p0i8.i64(i8* align 16 %0, i8 0, i64 100, i1 false), !dbg !21\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:96\l
+  %arraydecay = getelementptr inbounds [100 x i8], [100 x i8]* %dataBuffer, i64 0, i64 0, !dbg !22\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:96\l
+  store i8* %arraydecay, i8** %data, align 8, !dbg !23\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:98\l
+  %1 = load i8*, i8** %data, align 8, !dbg !24\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:98\l
+  %call = call i8* @strcpy(i8* %1, i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.1, i64 0, i64 0)) #7, !dbg !25\l
+}"];
+	CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2BBB18-> CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2BBB19;
+	CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2BBB19 [shape=record, label="{BB19:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:100\l
+  call void @llvm.dbg.declare(metadata i8** %dataCopy, metadata !136, metadata !DIExpression()), !dbg !138\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:100\l
+  %2 = load i8*, i8** %data, align 8, !dbg !29\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:100\l
+  store i8* %2, i8** %dataCopy, align 8, !dbg !28\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:101\l
+  call void @llvm.dbg.declare(metadata i8** %data1, metadata !140, metadata !DIExpression()), !dbg !141\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:101\l
+  %3 = load i8*, i8** %dataCopy, align 8, !dbg !32\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:101\l
+  store i8* %3, i8** %data1, align 8, !dbg !31\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:102\l
+  %4 = load i8*, i8** %data1, align 8, !dbg !33\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:102\l
+  %5 = load i8*, i8** %data1, align 8, !dbg !34\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:102\l
+  call void (i8*, ...) @goodG2BVaSink(i8* %4, i8* %5), !dbg !35\l
+}"];
+	CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2BBB19-> CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2BBB20;
+	CWE134_Uncontrolled_Format_String__char_console_vprintf_31_ll_goodG2BBB20 [shape=record, label="{BB20:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_598/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_31.c:104\l
+  ret void, !dbg !36\l
+}"];
+}

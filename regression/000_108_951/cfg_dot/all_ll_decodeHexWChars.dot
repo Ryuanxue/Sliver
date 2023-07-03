@@ -1,0 +1,136 @@
+digraph "CFG for'all_ll_decodeHexWChars' function" {
+	BBall_ll_decodeHexWChars_start[shape=record,label="{all_ll_decodeHexWChars_start}"];
+	BBall_ll_decodeHexWChars_start-> all_ll_decodeHexWCharsBB136;
+	all_ll_decodeHexWCharsBB136 [shape=record, label="{BB136:\l\l/:114787368\l
+  %bytes.addr = alloca i8*, align 8\l
+/:114787368\l
+  %numBytes.addr = alloca i64, align 8\l
+/:114787368\l
+  %hex.addr = alloca i32*, align 8\l
+/:114787368\l
+  %numWritten = alloca i64, align 8\l
+/:114787368\l
+  %byte = alloca i32, align 4\l
+/:114787368\l
+  store i8* %bytes, i8** %bytes.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:135\l
+  call void @llvm.dbg.declare(metadata i8** %bytes.addr, metadata !743, metadata !DIExpression()), !dbg !744\l
+/:135\l
+  store i64 %numBytes, i64* %numBytes.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:135\l
+  call void @llvm.dbg.declare(metadata i64* %numBytes.addr, metadata !745, metadata !DIExpression()), !dbg !746\l
+/:135\l
+  store i32* %hex, i32** %hex.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:135\l
+  call void @llvm.dbg.declare(metadata i32** %hex.addr, metadata !747, metadata !DIExpression()), !dbg !748\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:137\l
+  call void @llvm.dbg.declare(metadata i64* %numWritten, metadata !749, metadata !DIExpression()), !dbg !750\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:137\l
+  store i64 0, i64* %numWritten, align 8, !dbg !121\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  br label %while.cond, !dbg !122\l
+}"];
+	all_ll_decodeHexWCharsBB136-> all_ll_decodeHexWCharsBB137;
+	all_ll_decodeHexWCharsBB137 [shape=record, label="{BB137:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %0 = load i64, i64* %numWritten, align 8, !dbg !123\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %1 = load i64, i64* %numBytes.addr, align 8, !dbg !124\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %cmp = icmp ult i64 %0, %1, !dbg !125\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  br i1 %cmp, label %land.lhs.true, label %land.end, !dbg !126\l
+}"];
+	all_ll_decodeHexWCharsBB137-> all_ll_decodeHexWCharsBB138;
+	all_ll_decodeHexWCharsBB137-> all_ll_decodeHexWCharsBB139;
+	all_ll_decodeHexWCharsBB138 [shape=record, label="{BB138:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %2 = load i32*, i32** %hex.addr, align 8, !dbg !127\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %3 = load i64, i64* %numWritten, align 8, !dbg !128\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %mul = mul i64 2, %3, !dbg !129\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %arrayidx = getelementptr inbounds i32, i32* %2, i64 %mul, !dbg !127\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %4 = load i32, i32* %arrayidx, align 4, !dbg !127\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %call = call i32 @iswxdigit(i32 %4) #7, !dbg !130\l
+}"];
+	all_ll_decodeHexWCharsBB138-> all_ll_decodeHexWCharsBB140;
+	all_ll_decodeHexWCharsBB140 [shape=record, label="{BB140:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %tobool = icmp ne i32 %call, 0, !dbg !130\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  br i1 %tobool, label %land.rhs, label %land.end, !dbg !131\l
+}"];
+	all_ll_decodeHexWCharsBB140-> all_ll_decodeHexWCharsBB141;
+	all_ll_decodeHexWCharsBB140-> all_ll_decodeHexWCharsBB139;
+	all_ll_decodeHexWCharsBB141 [shape=record, label="{BB141:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %5 = load i32*, i32** %hex.addr, align 8, !dbg !132\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %6 = load i64, i64* %numWritten, align 8, !dbg !133\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %mul1 = mul i64 2, %6, !dbg !134\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %add = add i64 %mul1, 1, !dbg !135\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %arrayidx2 = getelementptr inbounds i32, i32* %5, i64 %add, !dbg !132\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %7 = load i32, i32* %arrayidx2, align 4, !dbg !132\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %call3 = call i32 @iswxdigit(i32 %7) #7, !dbg !136\l
+}"];
+	all_ll_decodeHexWCharsBB141-> all_ll_decodeHexWCharsBB142;
+	all_ll_decodeHexWCharsBB142 [shape=record, label="{BB142:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  %tobool4 = icmp ne i32 %call3, 0, !dbg !131\l
+/:143\l
+  br label %land.end\l
+}"];
+	all_ll_decodeHexWCharsBB142-> all_ll_decodeHexWCharsBB139;
+	all_ll_decodeHexWCharsBB139 [shape=record, label="{BB139:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:0\l
+  %8 = phi i1 [ false, %land.lhs.true ], [ false, %while.cond ], [ %tobool4, %land.rhs ], !dbg !137\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  br i1 %8, label %while.body, label %while.end, !dbg !122\l
+}"];
+	all_ll_decodeHexWCharsBB139-> all_ll_decodeHexWCharsBB143;
+	all_ll_decodeHexWCharsBB139-> all_ll_decodeHexWCharsBB144;
+	all_ll_decodeHexWCharsBB143 [shape=record, label="{BB143:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:145\l
+  call void @llvm.dbg.declare(metadata i32* %byte, metadata !767, metadata !DIExpression()), !dbg !769\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:146\l
+  %9 = load i32*, i32** %hex.addr, align 8, !dbg !141\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:146\l
+  %10 = load i64, i64* %numWritten, align 8, !dbg !142\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:146\l
+  %mul5 = mul i64 2, %10, !dbg !143\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:146\l
+  %arrayidx6 = getelementptr inbounds i32, i32* %9, i64 %mul5, !dbg !141\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:146\l
+  %call7 = call i32 (i32*, i32*, ...) @__isoc99_swscanf(i32* %arrayidx6, i32* getelementptr inbounds ([5 x i32], [5 x i32]* @.str.16, i64 0, i64 0), i32* %byte) #7, !dbg !144\l
+}"];
+	all_ll_decodeHexWCharsBB143-> all_ll_decodeHexWCharsBB145;
+	all_ll_decodeHexWCharsBB145 [shape=record, label="{BB145:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:147\l
+  %11 = load i32, i32* %byte, align 4, !dbg !145\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:147\l
+  %conv = trunc i32 %11 to i8, !dbg !146\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:147\l
+  %12 = load i8*, i8** %bytes.addr, align 8, !dbg !147\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:147\l
+  %13 = load i64, i64* %numWritten, align 8, !dbg !148\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:147\l
+  %arrayidx8 = getelementptr inbounds i8, i8* %12, i64 %13, !dbg !147\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:147\l
+  store i8 %conv, i8* %arrayidx8, align 1, !dbg !149\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:148\l
+  %14 = load i64, i64* %numWritten, align 8, !dbg !150\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:148\l
+  %inc = add i64 %14, 1, !dbg !150\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:148\l
+  store i64 %inc, i64* %numWritten, align 8, !dbg !150\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:143\l
+  br label %while.cond, !dbg !122, !llvm.loop !151\l
+}"];
+	all_ll_decodeHexWCharsBB145-> all_ll_decodeHexWCharsBB137;
+	all_ll_decodeHexWCharsBB144 [shape=record, label="{BB144:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:151\l
+  %15 = load i64, i64* %numWritten, align 8, !dbg !154\l
+/home/raoxue/Desktop/MemVerif/workspace/000_108_951/source_code/io.c:151\l
+  ret i64 %15, !dbg !155\l
+}"];
+}

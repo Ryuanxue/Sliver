@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_062_543/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_44.c:132">
+        <ind_callee funname="badSink" funsig="void (*)( int)"/>
+        <ind_callee funname="goodB2GSink" funsig="void (*)( int)"/>
+        <ind_callee funname="goodG2BSink" funsig="void (*)( int)"/>
+        <ind_callee funname="printIntLine" funsig="void (*)( int)"/>
+        <ind_callee funname="printUnsignedLine" funsig="void (*)( unsigned int)"/>
+        <ind_callee funname="printWcharLine" funsig="void (*)( wchar_t)"/>
+    </ind_loc>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_062_543/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_44.c:172">
+        <ind_callee funname="badSink" funsig="void (*)( int)"/>
+        <ind_callee funname="goodB2GSink" funsig="void (*)( int)"/>
+        <ind_callee funname="goodG2BSink" funsig="void (*)( int)"/>
+        <ind_callee funname="printIntLine" funsig="void (*)( int)"/>
+        <ind_callee funname="printUnsignedLine" funsig="void (*)( unsigned int)"/>
+        <ind_callee funname="printWcharLine" funsig="void (*)( wchar_t)"/>
+    </ind_loc>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_062_543/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_44.c:260">
+        <ind_callee funname="badSink" funsig="void (*)( int)"/>
+        <ind_callee funname="goodB2GSink" funsig="void (*)( int)"/>
+        <ind_callee funname="goodG2BSink" funsig="void (*)( int)"/>
+        <ind_callee funname="printIntLine" funsig="void (*)( int)"/>
+        <ind_callee funname="printUnsignedLine" funsig="void (*)( unsigned int)"/>
+        <ind_callee funname="printWcharLine" funsig="void (*)( wchar_t)"/>
+    </ind_loc>
+</Root>

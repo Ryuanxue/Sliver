@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include "_slice_header_.h"
+#include<assert.h>
+extern int GLOBAL_CONST_TRUE;
+
+int sink_outputarg_0;
+int sink_outputarg_copy_0;
+
+void opsink1(int arg0)
+{
+	sink_outputarg_0=arg0;
+}
+
+void opsink2(int arg0)
+{
+	sink_outputarg_copy_0=arg0;
+}
+
+void CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_0935CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_0955_1_self_com(){
+	sink_outputarg_0=sink_outputarg_copy_0;
+	int GLOBAL_CONST_TRUE1;
+	int GLOBAL_CONST_TRUE2;
+	GLOBAL_CONST_TRUE2 = GLOBAL_CONST_TRUE1;
+	char *_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_01;
+	char _CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_0arr1[16];
+	_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_01 = _CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_0arr1;
+	char *_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_02;
+	char _CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_0arr2[16];
+	_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_02 = _CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_0arr2;
+	memcpy(_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_0arr2,_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_0arr1,16);
+	GLOBAL_CONST_TRUE = GLOBAL_CONST_TRUE1;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_0935CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_0955_1(_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_01,opsink1);
+	GLOBAL_CONST_TRUE = GLOBAL_CONST_TRUE2;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_0935CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_0955_1(_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_09_bad_inputBuffer_02,opsink2);
+	assert(sink_outputarg_0==sink_outputarg_copy_0);
+}

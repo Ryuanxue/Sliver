@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="37"/>
+ <in_funname value="badSource"/>
+ <slicefun funname="CWE134_Uncontrolled_Format_String__char_console_vprintf_4237CWE134_Uncontrolled_Format_String__char_console_vprintf_4275_1"/>
+ <srcfun funname="fgets"/>
+ <out_line value="75"/>
+ <out_funname value="CWE134_Uncontrolled_Format_String__char_console_vprintf_42_bad"/>
+ <in_file value="CWE134_Uncontrolled_Format_String__char_console_vprintf_42.c"/>
+ <src_sta value="fgets(_CWE134_Uncontrolled_Format_String__char_console_vprintf_42_bad_data_0 + _badSource_dataLen_0, (int) (100 - _badSource_dataLen_0), stdin) != 0"/>
+ <out_file value="CWE134_Uncontrolled_Format_String__char_console_vprintf_42.c"/>
+ <in_vars>
+  <in_var rawname="data" newname="_CWE134_Uncontrolled_Format_String__char_console_vprintf_42_bad_data_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="data" newname="_CWE134_Uncontrolled_Format_String__char_console_vprintf_42_bad_data_0" kind="one_ptr" type="char"/>
+ </out_vars>
+ <gen_fun value="CWE134_Uncontrolled_Format_String__char_console_vprintf_4237CWE134_Uncontrolled_Format_String__char_console_vprintf_4275_1"/>
+ <gen_fun_params>
+  <param name="_CWE134_Uncontrolled_Format_String__char_console_vprintf_42_bad_data_0" kind="one_ptr" type="char"/>
+  <param name="badSource_return_" kind="one_ptr" type="char *"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="badSource" file="/home/raoxue/Desktop/MemVerif/workspace/000_079_603/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_42.c"/>
+  <fun funname="CWE134_Uncontrolled_Format_String__char_console_vprintf_42_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_079_603/source_code/CWE134_Uncontrolled_Format_String__char_console_vprintf_42.c"/>
+ </funsig>
+ <Gvars/>
+</root>

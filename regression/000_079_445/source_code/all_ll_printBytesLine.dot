@@ -1,0 +1,72 @@
+digraph "CFG for'all_ll_printBytesLine' function" {
+	BBall_ll_printBytesLine_start[shape=record,label="{all_ll_printBytesLine_start}"];
+	BBall_ll_printBytesLine_start-> all_ll_printBytesLineBB113;
+	all_ll_printBytesLineBB113 [shape=record, label="{BB113:\l\l/:3596346880\l
+  %bytes.addr = alloca i8*, align 8\l
+/:3596346880\l
+  %numBytes.addr = alloca i64, align 8\l
+/:3596346880\l
+  %i = alloca i64, align 8\l
+/:3596346880\l
+  store i8* %bytes, i8** %bytes.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:100\l
+  call void @llvm.dbg.declare(metadata i8** %bytes.addr, metadata !458, metadata !DIExpression()), !dbg !459\l
+/:100\l
+  store i64 %numBytes, i64* %numBytes.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:100\l
+  call void @llvm.dbg.declare(metadata i64* %numBytes.addr, metadata !460, metadata !DIExpression()), !dbg !461\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:102\l
+  call void @llvm.dbg.declare(metadata i64* %i, metadata !462, metadata !DIExpression()), !dbg !463\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  store i64 0, i64* %i, align 8, !dbg !65\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  br label %for.cond, !dbg !67\l
+}"];
+	all_ll_printBytesLineBB113-> all_ll_printBytesLineBB114;
+	all_ll_printBytesLineBB114 [shape=record, label="{BB114:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  %0 = load i64, i64* %i, align 8, !dbg !68\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  %1 = load i64, i64* %numBytes.addr, align 8, !dbg !70\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  %cmp = icmp ult i64 %0, %1, !dbg !71\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  br i1 %cmp, label %for.body, label %for.end, !dbg !72\l
+}"];
+	all_ll_printBytesLineBB114-> all_ll_printBytesLineBB115;
+	all_ll_printBytesLineBB114-> all_ll_printBytesLineBB116;
+	all_ll_printBytesLineBB115 [shape=record, label="{BB115:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:105\l
+  %2 = load i8*, i8** %bytes.addr, align 8, !dbg !73\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:105\l
+  %3 = load i64, i64* %i, align 8, !dbg !75\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:105\l
+  %arrayidx = getelementptr inbounds i8, i8* %2, i64 %3, !dbg !73\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:105\l
+  %4 = load i8, i8* %arrayidx, align 1, !dbg !73\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:105\l
+  %conv = zext i8 %4 to i32, !dbg !73\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:105\l
+  %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.14, i64 0, i64 0), i32 %conv), !dbg !76\l
+}"];
+	all_ll_printBytesLineBB115-> all_ll_printBytesLineBB117;
+	all_ll_printBytesLineBB117 [shape=record, label="{BB117:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:106\l
+  br label %for.inc, !dbg !77\l
+}"];
+	all_ll_printBytesLineBB117-> all_ll_printBytesLineBB118;
+	all_ll_printBytesLineBB118 [shape=record, label="{BB118:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  %5 = load i64, i64* %i, align 8, !dbg !78\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  %inc = add i64 %5, 1, !dbg !78\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  store i64 %inc, i64* %i, align 8, !dbg !78\l
+/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:103\l
+  br label %for.cond, !dbg !79, !llvm.loop !80\l
+}"];
+	all_ll_printBytesLineBB118-> all_ll_printBytesLineBB114;
+	all_ll_printBytesLineBB116 [shape=record, label="{BB116:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:107\l
+  %call1 = call i32 @puts(i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.15, i64 0, i64 0)), !dbg !83\l
+}"];
+	all_ll_printBytesLineBB116-> all_ll_printBytesLineBB119;
+	all_ll_printBytesLineBB119 [shape=record, label="{BB119:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_445/source_code/io.c:108\l
+  ret void, !dbg !84\l
+}"];
+}

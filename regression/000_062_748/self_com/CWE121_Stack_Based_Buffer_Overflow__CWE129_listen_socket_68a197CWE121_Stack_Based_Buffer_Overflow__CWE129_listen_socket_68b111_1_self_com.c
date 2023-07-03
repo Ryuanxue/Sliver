@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include "_slice_header_.h"
+#include<assert.h>
+extern int CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData;
+
+int sink_outputarg_0;
+int sink_outputarg_copy_0;
+
+void opsink1(int arg0)
+{
+	sink_outputarg_0=arg0;
+}
+
+void opsink2(int arg0)
+{
+	sink_outputarg_copy_0=arg0;
+}
+
+void CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68a197CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68b111_1_self_com(){
+	sink_outputarg_0=sink_outputarg_copy_0;
+	int CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData1;
+	int CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData2;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData2 = CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData1;
+	char *_goodB2G_inputBuffer_01;
+	char _goodB2G_inputBuffer_0arr1[16];
+	_goodB2G_inputBuffer_01 = _goodB2G_inputBuffer_0arr1;
+	char *_goodB2G_inputBuffer_02;
+	char _goodB2G_inputBuffer_0arr2[16];
+	_goodB2G_inputBuffer_02 = _goodB2G_inputBuffer_0arr2;
+	memcpy(_goodB2G_inputBuffer_0arr2,_goodB2G_inputBuffer_0arr1,16);
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData = CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData1;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68a197CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68b111_1(_goodB2G_inputBuffer_01,opsink1);
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData = CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68_goodB2GData2;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68a197CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_68b111_1(_goodB2G_inputBuffer_02,opsink2);
+	assert(sink_outputarg_0==sink_outputarg_copy_0);
+}

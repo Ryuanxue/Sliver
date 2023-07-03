@@ -1,0 +1,19 @@
+digraph "CFG for'CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSink' function" {
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSink_start[shape=record,label="{CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSink_start}"];
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSink_start-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSinkBB4;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSinkBB4 [shape=record, label="{BB4:\l\l/:1909527808\l
+  %data.addr = alloca i32, align 4\l
+/:1909527808\l
+  store i32 %data, i32* %data.addr, align 4\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_596/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c.c:47\l
+  call void @llvm.dbg.declare(metadata i32* %data.addr, metadata !23, metadata !DIExpression()), !dbg !24\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_596/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c.c:49\l
+  %0 = load i32, i32* %data.addr, align 4, !dbg !13\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_596/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c.c:49\l
+  call void @CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54d_goodB2GSink(i32 %0), !dbg !14\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSinkBB4-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSinkBB5;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c_goodB2GSinkBB5 [shape=record, label="{BB5:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_596/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_54c.c:50\l
+  ret void, !dbg !15\l
+}"];
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="86"/>
+ <in_funname value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad"/>
+ <slicefun funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_1886CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18117_1"/>
+ <srcfun funname="recv"/>
+ <out_line value="117"/>
+ <out_funname value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad"/>
+ <in_file value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18.c"/>
+ <src_sta value="_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad_recvResult_0 = recv(_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad_connectSocket_0, _CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad_inputBuffer_0, ((3 * (sizeof(_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad_data_0))) + 2) - 1, 0)"/>
+ <out_file value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18.c"/>
+ <in_vars>
+  <in_var rawname="inputBuffer" newname="_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad_inputBuffer_0" kind="one_arr" type="char" dim=""/>
+ </in_vars>
+ <out_vars>
+  <out_var name="data" newname="_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad_data_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_1886CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18117_1"/>
+ <gen_fun_params>
+  <param name="_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad_inputBuffer_0" kind="one_arr" type="char" dim="(3 * (sizeof(_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad_data_0))) + 2"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_062_533/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_18.c"/>
+ </funsig>
+ <Gvars/>
+</root>

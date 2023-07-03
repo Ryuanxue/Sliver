@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="data" newname="_CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65_bad_data_0" kind="basic" type="int"/>
+</root>

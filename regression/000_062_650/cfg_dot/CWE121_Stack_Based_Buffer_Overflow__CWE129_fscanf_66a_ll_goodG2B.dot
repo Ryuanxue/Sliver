@@ -1,0 +1,31 @@
+digraph "CFG for'CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2B' function" {
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2B_start[shape=record,label="{CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2B_start}"];
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2B_start-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2BBB3;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2BBB3 [shape=record, label="{BB3:\l\l/:90788184\l
+  %data = alloca i32, align 4\l
+/:90788184\l
+  %dataArray = alloca [5 x i32], align 16\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:46\l
+  call void @llvm.dbg.declare(metadata i32* %data, metadata !28, metadata !DIExpression()), !dbg !29\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:47\l
+  call void @llvm.dbg.declare(metadata [5 x i32]* %dataArray, metadata !30, metadata !DIExpression()), !dbg !31\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:49\l
+  store i32 -1, i32* %data, align 4, !dbg !18\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:52\l
+  store i32 7, i32* %data, align 4, !dbg !19\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:53\l
+  %0 = load i32, i32* %data, align 4, !dbg !20\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:53\l
+  %arrayidx = getelementptr inbounds [5 x i32], [5 x i32]* %dataArray, i64 0, i64 2, !dbg !21\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:53\l
+  store i32 %0, i32* %arrayidx, align 8, !dbg !22\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:54\l
+  %arraydecay = getelementptr inbounds [5 x i32], [5 x i32]* %dataArray, i64 0, i64 0, !dbg !23\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:54\l
+  call void @CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66b_goodG2BSink(i32* %arraydecay), !dbg !24\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2BBB3-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2BBB4;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a_ll_goodG2BBB4 [shape=record, label="{BB4:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_650/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_66a.c:55\l
+  ret void, !dbg !25\l
+}"];
+}

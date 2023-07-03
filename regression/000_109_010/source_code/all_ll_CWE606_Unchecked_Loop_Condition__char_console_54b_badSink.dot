@@ -1,0 +1,19 @@
+digraph "CFG for'all_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSink' function" {
+	BBall_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSink_start[shape=record,label="{all_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSink_start}"];
+	BBall_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSink_start-> all_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSinkBB34;
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSinkBB34 [shape=record, label="{BB34:\l\l/:1276078592\l
+  %data.addr = alloca i8*, align 8\l
+/:1276078592\l
+  store i8* %data, i8** %data.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_010/source_code/CWE606_Unchecked_Loop_Condition__char_console_54b.c:31\l
+  call void @llvm.dbg.declare(metadata i8** %data.addr, metadata !203, metadata !DIExpression()), !dbg !204\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_010/source_code/CWE606_Unchecked_Loop_Condition__char_console_54b.c:33\l
+  %0 = load i8*, i8** %data.addr, align 8, !dbg !65\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_010/source_code/CWE606_Unchecked_Loop_Condition__char_console_54b.c:33\l
+  call void @CWE606_Unchecked_Loop_Condition__char_console_54c_badSink(i8* %0), !dbg !66\l
+}"];
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSinkBB34-> all_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSinkBB35;
+	all_ll_CWE606_Unchecked_Loop_Condition__char_console_54b_badSinkBB35 [shape=record, label="{BB35:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_010/source_code/CWE606_Unchecked_Loop_Condition__char_console_54b.c:34\l
+  ret void, !dbg !67\l
+}"];
+}

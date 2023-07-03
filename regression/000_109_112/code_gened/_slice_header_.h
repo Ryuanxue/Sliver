@@ -1,0 +1,3 @@
+#include "_costom_header_.h"
+void CWE606_Unchecked_Loop_Condition__char_file_66a54CWE606_Unchecked_Loop_Condition__char_file_66b44_1(char *_CWE606_Unchecked_Loop_Condition__char_file_66_bad_data_0, void (*opsink)(int _CWE606_Unchecked_Loop_Condition__char_file_66b_badSink_n_0));
+void CWE606_Unchecked_Loop_Condition__char_file_66a106CWE606_Unchecked_Loop_Condition__char_file_66b90_1(char *_goodB2G_data_0, void (*opsink)(int _CWE606_Unchecked_Loop_Condition__char_file_66b_goodB2GSink_n_0));

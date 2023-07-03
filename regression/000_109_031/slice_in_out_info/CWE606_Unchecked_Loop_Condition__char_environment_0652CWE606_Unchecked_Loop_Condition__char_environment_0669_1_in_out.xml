@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="52"/>
+ <in_funname value="CWE606_Unchecked_Loop_Condition__char_environment_06_bad"/>
+ <slicefun funname="CWE606_Unchecked_Loop_Condition__char_environment_0652CWE606_Unchecked_Loop_Condition__char_environment_0669_1"/>
+ <srcfun funname="getenv"/>
+ <out_line value="69"/>
+ <out_funname value="CWE606_Unchecked_Loop_Condition__char_environment_06_bad"/>
+ <in_file value="CWE606_Unchecked_Loop_Condition__char_environment_06.c"/>
+ <src_sta value="_CWE606_Unchecked_Loop_Condition__char_environment_06_bad_environment_0 = getenv(&quot;ADD&quot;)"/>
+ <out_file value="CWE606_Unchecked_Loop_Condition__char_environment_06.c"/>
+ <in_vars>
+  <in_var rawname="environment" newname="_CWE606_Unchecked_Loop_Condition__char_environment_06_bad_environment_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="n" newname="_CWE606_Unchecked_Loop_Condition__char_environment_06_bad_n_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE606_Unchecked_Loop_Condition__char_environment_0652CWE606_Unchecked_Loop_Condition__char_environment_0669_1"/>
+ <gen_fun_params>
+  <param name="_CWE606_Unchecked_Loop_Condition__char_environment_06_bad_environment_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_environment_06_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_031/source_code/CWE606_Unchecked_Loop_Condition__char_environment_06.c"/>
+ </funsig>
+ <Gvars>
+  <gvar name="STATIC_CONST_FIVE"/>
+ </Gvars>
+</root>

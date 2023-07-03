@@ -1,0 +1,14 @@
+#include "_costom_header_.h"
+void CWE606_Unchecked_Loop_Condition__char_console_65a45CWE606_Unchecked_Loop_Condition__char_console_65b36_1(char *_CWE606_Unchecked_Loop_Condition__char_console_65_bad_data_0, void (*opsink)(int _CWE606_Unchecked_Loop_Condition__char_console_65b_badSink_n_0));
+void CWE606_Unchecked_Loop_Condition__char_console_65a45CWE606_Unchecked_Loop_Condition__char_console_65b59_1(char *_CWE606_Unchecked_Loop_Condition__char_console_65_bad_data_0, void (*opsink)(int _CWE606_Unchecked_Loop_Condition__char_console_65b_goodG2BSink_n_0));
+void CWE606_Unchecked_Loop_Condition__char_console_65a45CWE606_Unchecked_Loop_Condition__char_console_65b80_1(char *_CWE606_Unchecked_Loop_Condition__char_console_65_bad_data_0, void (*opsink)(int _CWE606_Unchecked_Loop_Condition__char_console_65b_goodB2GSink_n_0));
+void CWE606_Unchecked_Loop_Condition__char_console_65a99CWE606_Unchecked_Loop_Condition__char_console_65b36_1(char *_goodB2G_data_0, void (*opsink)(int _CWE606_Unchecked_Loop_Condition__char_console_65b_badSink_n_0));
+void CWE606_Unchecked_Loop_Condition__char_console_65a99CWE606_Unchecked_Loop_Condition__char_console_65b59_1(char *_goodB2G_data_0, void (*opsink)(int _CWE606_Unchecked_Loop_Condition__char_console_65b_goodG2BSink_n_0));
+void CWE606_Unchecked_Loop_Condition__char_console_65a99CWE606_Unchecked_Loop_Condition__char_console_65b80_1(char *_goodB2G_data_0, void (*opsink)(int _CWE606_Unchecked_Loop_Condition__char_console_65b_goodB2GSink_n_0));
+
+int sscanf(const char* data, const char* s, int* n)
+                {
+ *n=atoi(data);
+ if( strlen(data)>0) return 1;
+ else return 0;
+}

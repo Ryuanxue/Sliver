@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="n" newname="_goodG2B2_n_0" kind="basic" type="int"/>
+ <global name="staticTrue" newname="staticTrue" kind="basic" type="int"/>
+</root>

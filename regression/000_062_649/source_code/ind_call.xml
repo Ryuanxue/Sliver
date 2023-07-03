@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_062_649/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65a.c:35">
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_badSink" funsig="void (*)( int)"/>
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_goodB2GSink" funsig="void (*)( int)"/>
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_goodG2BSink" funsig="void (*)( int)"/>
+        <ind_callee funname="printIntLine" funsig="void (*)( int)"/>
+        <ind_callee funname="printUnsignedLine" funsig="void (*)( unsigned int)"/>
+        <ind_callee funname="printWcharLine" funsig="void (*)( wchar_t)"/>
+    </ind_loc>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_062_649/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65a.c:53">
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_badSink" funsig="void (*)( int)"/>
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_goodB2GSink" funsig="void (*)( int)"/>
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_goodG2BSink" funsig="void (*)( int)"/>
+        <ind_callee funname="printIntLine" funsig="void (*)( int)"/>
+        <ind_callee funname="printUnsignedLine" funsig="void (*)( unsigned int)"/>
+        <ind_callee funname="printWcharLine" funsig="void (*)( wchar_t)"/>
+    </ind_loc>
+    <ind_loc info="/home/raoxue/Desktop/MemVerif/workspace/000_062_649/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65a.c:66">
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_badSink" funsig="void (*)( int)"/>
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_goodB2GSink" funsig="void (*)( int)"/>
+        <ind_callee funname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fscanf_65b_goodG2BSink" funsig="void (*)( int)"/>
+        <ind_callee funname="printIntLine" funsig="void (*)( int)"/>
+        <ind_callee funname="printUnsignedLine" funsig="void (*)( unsigned int)"/>
+        <ind_callee funname="printWcharLine" funsig="void (*)( wchar_t)"/>
+    </ind_loc>
+</Root>

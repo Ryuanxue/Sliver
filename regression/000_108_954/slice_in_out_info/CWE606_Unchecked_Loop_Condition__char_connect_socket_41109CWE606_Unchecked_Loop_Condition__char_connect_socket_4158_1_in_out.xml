@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="109"/>
+ <in_funname value="CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad"/>
+ <slicefun funname="CWE606_Unchecked_Loop_Condition__char_connect_socket_41109CWE606_Unchecked_Loop_Condition__char_connect_socket_4158_1"/>
+ <srcfun funname="recv"/>
+ <out_line value="58"/>
+ <out_funname value="badSink"/>
+ <in_file value="CWE606_Unchecked_Loop_Condition__char_connect_socket_41.c"/>
+ <src_sta value="_CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad_recvResult_0 = recv(_CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad_connectSocket_0, (char *) (_CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad_data_0 + _CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad_dataLen_0), (sizeof(char)) * ((100 - _CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad_dataLen_0) - 1), 0)"/>
+ <out_file value="CWE606_Unchecked_Loop_Condition__char_connect_socket_41.c"/>
+ <in_vars>
+  <in_var rawname="data" newname="_CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad_data_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="n" newname="_badSink_n_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE606_Unchecked_Loop_Condition__char_connect_socket_41109CWE606_Unchecked_Loop_Condition__char_connect_socket_4158_1"/>
+ <gen_fun_params>
+  <param name="_CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad_data_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_connect_socket_41_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_108_954/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_41.c"/>
+  <fun funname="badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_108_954/source_code/CWE606_Unchecked_Loop_Condition__char_connect_socket_41.c"/>
+ </funsig>
+ <Gvars/>
+</root>

@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="n" newname="_CWE606_Unchecked_Loop_Condition__char_console_09_bad_n_0" kind="basic" type="int"/>
+ <global name="GLOBAL_CONST_TRUE" newname="GLOBAL_CONST_TRUE" kind="basic" type="int"/>
+</root>

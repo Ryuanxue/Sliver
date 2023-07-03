@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="102"/>
+ <in_funname value="CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad"/>
+ <slicefun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_66a102CWE606_Unchecked_Loop_Condition__char_listen_socket_66b59_1"/>
+ <srcfun funname="recv"/>
+ <out_line value="59"/>
+ <out_funname value="CWE606_Unchecked_Loop_Condition__char_listen_socket_66b_badSink"/>
+ <in_file value="CWE606_Unchecked_Loop_Condition__char_listen_socket_66a.c"/>
+ <src_sta value="_CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad_recvResult_0 = recv(_CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad_acceptSocket_0, (char *) (_CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad_data_0 + _CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad_dataLen_0), (sizeof(char)) * ((100 - _CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad_dataLen_0) - 1), 0)"/>
+ <out_file value="CWE606_Unchecked_Loop_Condition__char_listen_socket_66b.c"/>
+ <in_vars>
+  <in_var rawname="data" newname="_CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad_data_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="n" newname="_CWE606_Unchecked_Loop_Condition__char_listen_socket_66b_badSink_n_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE606_Unchecked_Loop_Condition__char_listen_socket_66a102CWE606_Unchecked_Loop_Condition__char_listen_socket_66b59_1"/>
+ <gen_fun_params>
+  <param name="_CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad_data_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_66_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_160/source_code/CWE606_Unchecked_Loop_Condition__char_listen_socket_66a.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_listen_socket_66b_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_160/source_code/CWE606_Unchecked_Loop_Condition__char_listen_socket_66b.c"/>
+ </funsig>
+ <Gvars/>
+</root>

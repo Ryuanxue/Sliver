@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="68"/>
+ <in_funname value="CWE606_Unchecked_Loop_Condition__char_environment_45_bad"/>
+ <slicefun funname="CWE606_Unchecked_Loop_Condition__char_environment_4568CWE606_Unchecked_Loop_Condition__char_environment_4550_1"/>
+ <srcfun funname="getenv"/>
+ <out_line value="50"/>
+ <out_funname value="badSink"/>
+ <in_file value="CWE606_Unchecked_Loop_Condition__char_environment_45.c"/>
+ <src_sta value="_CWE606_Unchecked_Loop_Condition__char_environment_45_bad_environment_0 = getenv(&quot;ADD&quot;)"/>
+ <out_file value="CWE606_Unchecked_Loop_Condition__char_environment_45.c"/>
+ <in_vars>
+  <in_var rawname="environment" newname="_CWE606_Unchecked_Loop_Condition__char_environment_45_bad_environment_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="n" newname="_badSink_n_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE606_Unchecked_Loop_Condition__char_environment_4568CWE606_Unchecked_Loop_Condition__char_environment_4550_1"/>
+ <gen_fun_params>
+  <param name="_CWE606_Unchecked_Loop_Condition__char_environment_45_bad_environment_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_environment_45_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_054/source_code/CWE606_Unchecked_Loop_Condition__char_environment_45.c"/>
+  <fun funname="badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_054/source_code/CWE606_Unchecked_Loop_Condition__char_environment_45.c"/>
+ </funsig>
+ <Gvars>
+  <gvar name="CWE606_Unchecked_Loop_Condition__char_environment_45_badData"/>
+ </Gvars>
+</root>

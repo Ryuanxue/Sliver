@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <arg name="_goodB2G_data_1" size="8" ptr="*" type="char" const="" level="L"/>
+</Root>

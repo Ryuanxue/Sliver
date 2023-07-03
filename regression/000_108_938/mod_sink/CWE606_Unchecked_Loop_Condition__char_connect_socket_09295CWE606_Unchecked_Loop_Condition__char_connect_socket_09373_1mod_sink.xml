@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="n" newname="_goodG2B1_n_0" kind="basic" type="int"/>
+ <global name="GLOBAL_CONST_TRUE" newname="GLOBAL_CONST_TRUE" kind="basic" type="int"/>
+ <global name="GLOBAL_CONST_FALSE" newname="GLOBAL_CONST_FALSE" kind="basic" type="int"/>
+</root>

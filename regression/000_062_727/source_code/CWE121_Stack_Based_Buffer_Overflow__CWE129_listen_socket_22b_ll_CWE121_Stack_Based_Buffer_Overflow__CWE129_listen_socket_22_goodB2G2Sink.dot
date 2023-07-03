@@ -1,0 +1,117 @@
+digraph "CFG for'CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2Sink' function" {
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2Sink_start[shape=record,label="{CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2Sink_start}"];
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2Sink_start-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB27;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB27 [shape=record, label="{BB27:\l\l/:102013576\l
+  %data.addr = alloca i32, align 4\l
+/:102013576\l
+  %i = alloca i32, align 4\l
+/:102013576\l
+  %buffer = alloca [10 x i32], align 16\l
+/:102013576\l
+  store i32 %data, i32* %data.addr, align 4\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:92\l
+  call void @llvm.dbg.declare(metadata i32* %data.addr, metadata !102, metadata !DIExpression()), !dbg !103\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:94\l
+  %0 = load i32, i32* @CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2Global, align 4, !dbg !13\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:94\l
+  %tobool = icmp ne i32 %0, 0, !dbg !13\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:94\l
+  br i1 %tobool, label %if.then, label %if.end6, !dbg !15\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB27-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB28;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB27-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB29;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB28 [shape=record, label="{BB28:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:97\l
+  call void @llvm.dbg.declare(metadata i32* %i, metadata !107, metadata !DIExpression()), !dbg !110\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:98\l
+  call void @llvm.dbg.declare(metadata [10 x i32]* %buffer, metadata !111, metadata !DIExpression()), !dbg !112\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:98\l
+  %1 = bitcast [10 x i32]* %buffer to i8*, !dbg !24\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:98\l
+  call void @llvm.memset.p0i8.i64(i8* align 16 %1, i8 0, i64 40, i1 false), !dbg !24\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:100\l
+  %2 = load i32, i32* %data.addr, align 4, !dbg !25\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:100\l
+  %cmp = icmp sge i32 %2, 0, !dbg !27\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:100\l
+  br i1 %cmp, label %land.lhs.true, label %if.else, !dbg !28\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB28-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB30;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB28-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB31;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB30 [shape=record, label="{BB30:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:100\l
+  %3 = load i32, i32* %data.addr, align 4, !dbg !29\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:100\l
+  %cmp1 = icmp slt i32 %3, 10, !dbg !30\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:100\l
+  br i1 %cmp1, label %if.then2, label %if.else, !dbg !31\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB30-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB32;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB30-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB31;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB32 [shape=record, label="{BB32:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:102\l
+  %4 = load i32, i32* %data.addr, align 4, !dbg !32\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:102\l
+  %idxprom = sext i32 %4 to i64, !dbg !34\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:102\l
+  %arrayidx = getelementptr inbounds [10 x i32], [10 x i32]* %buffer, i64 0, i64 %idxprom, !dbg !34\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:102\l
+  store i32 1, i32* %arrayidx, align 4, !dbg !35\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  store i32 0, i32* %i, align 4, !dbg !36\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  br label %for.cond, !dbg !38\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB32-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB33;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB33 [shape=record, label="{BB33:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  %5 = load i32, i32* %i, align 4, !dbg !39\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  %cmp3 = icmp slt i32 %5, 10, !dbg !41\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  br i1 %cmp3, label %for.body, label %for.end, !dbg !42\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB33-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB34;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB33-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB35;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB34 [shape=record, label="{BB34:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:106\l
+  %6 = load i32, i32* %i, align 4, !dbg !43\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:106\l
+  %idxprom4 = sext i32 %6 to i64, !dbg !45\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:106\l
+  %arrayidx5 = getelementptr inbounds [10 x i32], [10 x i32]* %buffer, i64 0, i64 %idxprom4, !dbg !45\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:106\l
+  %7 = load i32, i32* %arrayidx5, align 4, !dbg !45\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:106\l
+  call void @printIntLine(i32 %7), !dbg !46\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB34-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB36;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB36 [shape=record, label="{BB36:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:107\l
+  br label %for.inc, !dbg !47\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB36-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB37;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB37 [shape=record, label="{BB37:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  %8 = load i32, i32* %i, align 4, !dbg !48\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  %inc = add nsw i32 %8, 1, !dbg !48\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  store i32 %inc, i32* %i, align 4, !dbg !48\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:104\l
+  br label %for.cond, !dbg !49, !llvm.loop !50\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB37-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB33;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB35 [shape=record, label="{BB35:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:108\l
+  br label %if.end, !dbg !53\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB35-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB38;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB31 [shape=record, label="{BB31:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:111\l
+  call void @printLine(i8* getelementptr inbounds ([36 x i8], [36 x i8]* @.str.2, i64 0, i64 0)), !dbg !54\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB31-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB39;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB39 [shape=record, label="{BB39:\l\l/:111\l
+  br label %if.end\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB39-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB38;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB38 [shape=record, label="{BB38:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:114\l
+  br label %if.end6, !dbg !56\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB38-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB29;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22_goodB2G2SinkBB29 [shape=record, label="{BB29:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_22b.c:115\l
+  ret void, !dbg !57\l
+}"];
+}

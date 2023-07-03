@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="data" newname="_badSink_data_0" kind="one_ptr" type="char"/>
+ <global name="CWE134_Uncontrolled_Format_String__char_console_vprintf_45_badData" newname="CWE134_Uncontrolled_Format_String__char_console_vprintf_45_badData" kind="one_ptr" type="char"/>
+</root>

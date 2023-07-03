@@ -1,0 +1,13 @@
+digraph "CFG for'io_ll_globalReturnsTrueOrFalse' function" {
+	BBio_ll_globalReturnsTrueOrFalse_start[shape=record,label="{io_ll_globalReturnsTrueOrFalse_start}"];
+	BBio_ll_globalReturnsTrueOrFalse_start-> io_ll_globalReturnsTrueOrFalseBB67;
+	io_ll_globalReturnsTrueOrFalseBB67 [shape=record, label="{BB67:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_162/source_code/io.c:168\l
+  %call = call i32 @rand() #5, !dbg !52\l
+}"];
+	io_ll_globalReturnsTrueOrFalseBB67-> io_ll_globalReturnsTrueOrFalseBB68;
+	io_ll_globalReturnsTrueOrFalseBB68 [shape=record, label="{BB68:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_162/source_code/io.c:168\l
+  %rem = srem i32 %call, 2, !dbg !53\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_162/source_code/io.c:168\l
+  ret i32 %rem, !dbg !54\l
+}"];
+}

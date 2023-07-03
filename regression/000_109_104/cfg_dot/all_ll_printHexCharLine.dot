@@ -1,0 +1,21 @@
+digraph "CFG for'all_ll_printHexCharLine' function" {
+	BBall_ll_printHexCharLine_start[shape=record,label="{all_ll_printHexCharLine_start}"];
+	BBall_ll_printHexCharLine_start-> all_ll_printHexCharLineBB93;
+	all_ll_printHexCharLineBB93 [shape=record, label="{BB93:\l\l/:3995447296\l
+  %charHex.addr = alloca i8, align 1\l
+/:3995447296\l
+  store i8 %charHex, i8* %charHex.addr, align 1\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_104/source_code/io.c:65\l
+  call void @llvm.dbg.declare(metadata i8* %charHex.addr, metadata !470, metadata !DIExpression()), !dbg !471\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_104/source_code/io.c:67\l
+  %0 = load i8, i8* %charHex.addr, align 1, !dbg !61\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_104/source_code/io.c:67\l
+  %conv = sext i8 %0 to i32, !dbg !61\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_104/source_code/io.c:67\l
+  %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.9.22, i64 0, i64 0), i32 %conv), !dbg !62\l
+}"];
+	all_ll_printHexCharLineBB93-> all_ll_printHexCharLineBB94;
+	all_ll_printHexCharLineBB94 [shape=record, label="{BB94:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_104/source_code/io.c:68\l
+  ret void, !dbg !63\l
+}"];
+}

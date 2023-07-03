@@ -1,0 +1,163 @@
+digraph "CFG for'all_ll_goodB2G1' function" {
+	BBall_ll_goodB2G1_start[shape=record,label="{all_ll_goodB2G1_start}"];
+	BBall_ll_goodB2G1_start-> all_ll_goodB2G1BB14;
+	all_ll_goodB2G1BB14 [shape=record, label="{BB14:\l\l/:113249608\l
+  %data = alloca i8*, align 8\l
+/:113249608\l
+  %dataBuffer = alloca [100 x i8], align 16\l
+/:113249608\l
+  %dataLen = alloca i64, align 8\l
+/:113249608\l
+  %environment = alloca i8*, align 8\l
+/:113249608\l
+  %i = alloca i32, align 4\l
+/:113249608\l
+  %n = alloca i32, align 4\l
+/:113249608\l
+  %intVariable = alloca i32, align 4\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:82\l
+  call void @llvm.dbg.declare(metadata i8** %data, metadata !128, metadata !DIExpression()), !dbg !129\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:83\l
+  call void @llvm.dbg.declare(metadata [100 x i8]* %dataBuffer, metadata !130, metadata !DIExpression()), !dbg !131\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:83\l
+  %0 = bitcast [100 x i8]* %dataBuffer to i8*, !dbg !61\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:83\l
+  call void @llvm.memset.p0i8.i64(i8* align 16 %0, i8 0, i64 100, i1 false), !dbg !61\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:84\l
+  %arraydecay = getelementptr inbounds [100 x i8], [100 x i8]* %dataBuffer, i64 0, i64 0, !dbg !62\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:84\l
+  store i8* %arraydecay, i8** %data, align 8, !dbg !63\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:89\l
+  call void @llvm.dbg.declare(metadata i64* %dataLen, metadata !134, metadata !DIExpression()), !dbg !138\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:89\l
+  %1 = load i8*, i8** %data, align 8, !dbg !72\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:89\l
+  %call = call i64 @strlen(i8* %1) #7, !dbg !73\l
+}"];
+	all_ll_goodB2G1BB14-> all_ll_goodB2G1BB15;
+	all_ll_goodB2G1BB15 [shape=record, label="{BB15:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:89\l
+  store i64 %call, i64* %dataLen, align 8, !dbg !71\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:90\l
+  call void @llvm.dbg.declare(metadata i8** %environment, metadata !141, metadata !DIExpression()), !dbg !142\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:90\l
+  %call1 = call i8* @getenv(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str, i64 0, i64 0)) #8, !dbg !76\l
+}"];
+	all_ll_goodB2G1BB15-> all_ll_goodB2G1BB16;
+	all_ll_goodB2G1BB16 [shape=record, label="{BB16:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:90\l
+  store i8* %call1, i8** %environment, align 8, !dbg !75\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:92\l
+  %2 = load i8*, i8** %environment, align 8, !dbg !77\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:92\l
+  %cmp = icmp ne i8* %2, null, !dbg !79\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:92\l
+  br i1 %cmp, label %if.then, label %if.end, !dbg !80\l
+}"];
+	all_ll_goodB2G1BB16-> all_ll_goodB2G1BB17;
+	all_ll_goodB2G1BB16-> all_ll_goodB2G1BB18;
+	all_ll_goodB2G1BB17 [shape=record, label="{BB17:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:95\l
+  %3 = load i8*, i8** %data, align 8, !dbg !81\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:95\l
+  %4 = load i64, i64* %dataLen, align 8, !dbg !83\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:95\l
+  %add.ptr = getelementptr inbounds i8, i8* %3, i64 %4, !dbg !84\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:95\l
+  %5 = load i8*, i8** %environment, align 8, !dbg !85\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:95\l
+  %6 = load i64, i64* %dataLen, align 8, !dbg !86\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:95\l
+  %sub = sub i64 100, %6, !dbg !87\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:95\l
+  %sub2 = sub i64 %sub, 1, !dbg !88\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:95\l
+  %call3 = call i8* @strncat(i8* %add.ptr, i8* %5, i64 %sub2) #8, !dbg !89\l
+}"];
+	all_ll_goodB2G1BB17-> all_ll_goodB2G1BB19;
+	all_ll_goodB2G1BB19 [shape=record, label="{BB19:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:96\l
+  br label %if.end, !dbg !90\l
+}"];
+	all_ll_goodB2G1BB19-> all_ll_goodB2G1BB18;
+	all_ll_goodB2G1BB18 [shape=record, label="{BB18:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:107\l
+  call void @llvm.dbg.declare(metadata i32* %i, metadata !158, metadata !DIExpression()), !dbg !162\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:107\l
+  call void @llvm.dbg.declare(metadata i32* %n, metadata !163, metadata !DIExpression()), !dbg !164\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:107\l
+  call void @llvm.dbg.declare(metadata i32* %intVariable, metadata !165, metadata !DIExpression()), !dbg !166\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:108\l
+  %7 = load i8*, i8** %data, align 8, !dbg !100\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:108\l
+  %call4 = call i32 (i8*, i8*, ...) @__isoc99_sscanf(i8* %7, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0), i32* %n) #8, !dbg !102\l
+}"];
+	all_ll_goodB2G1BB18-> all_ll_goodB2G1BB20;
+	all_ll_goodB2G1BB20 [shape=record, label="{BB20:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:108\l
+  %cmp5 = icmp eq i32 %call4, 1, !dbg !103\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:108\l
+  br i1 %cmp5, label %if.then6, label %if.end12, !dbg !104\l
+}"];
+	all_ll_goodB2G1BB20-> all_ll_goodB2G1BB21;
+	all_ll_goodB2G1BB20-> all_ll_goodB2G1BB22;
+	all_ll_goodB2G1BB21 [shape=record, label="{BB21:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:111\l
+  %8 = load i32, i32* %n, align 4, !dbg !105\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:111\l
+  %cmp7 = icmp slt i32 %8, 10000, !dbg !108\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:111\l
+  br i1 %cmp7, label %if.then8, label %if.end11, !dbg !109\l
+}"];
+	all_ll_goodB2G1BB21-> all_ll_goodB2G1BB23;
+	all_ll_goodB2G1BB21-> all_ll_goodB2G1BB24;
+	all_ll_goodB2G1BB23 [shape=record, label="{BB23:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:113\l
+  store i32 0, i32* %intVariable, align 4, !dbg !110\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  store i32 0, i32* %i, align 4, !dbg !112\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  br label %for.cond, !dbg !114\l
+}"];
+	all_ll_goodB2G1BB23-> all_ll_goodB2G1BB25;
+	all_ll_goodB2G1BB25 [shape=record, label="{BB25:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  %9 = load i32, i32* %i, align 4, !dbg !115\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  %10 = load i32, i32* %n, align 4, !dbg !117\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  %cmp9 = icmp slt i32 %9, %10, !dbg !118\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  br i1 %cmp9, label %for.body, label %for.end, !dbg !119\l
+}"];
+	all_ll_goodB2G1BB25-> all_ll_goodB2G1BB26;
+	all_ll_goodB2G1BB25-> all_ll_goodB2G1BB27;
+	all_ll_goodB2G1BB26 [shape=record, label="{BB26:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:117\l
+  %11 = load i32, i32* %intVariable, align 4, !dbg !120\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:117\l
+  %inc = add nsw i32 %11, 1, !dbg !120\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:117\l
+  store i32 %inc, i32* %intVariable, align 4, !dbg !120\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:118\l
+  br label %for.inc, !dbg !122\l
+}"];
+	all_ll_goodB2G1BB26-> all_ll_goodB2G1BB28;
+	all_ll_goodB2G1BB28 [shape=record, label="{BB28:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  %12 = load i32, i32* %i, align 4, !dbg !123\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  %inc10 = add nsw i32 %12, 1, !dbg !123\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  store i32 %inc10, i32* %i, align 4, !dbg !123\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:114\l
+  br label %for.cond, !dbg !124, !llvm.loop !125\l
+}"];
+	all_ll_goodB2G1BB28-> all_ll_goodB2G1BB25;
+	all_ll_goodB2G1BB27 [shape=record, label="{BB27:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:119\l
+  %13 = load i32, i32* %intVariable, align 4, !dbg !128\l
+/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:119\l
+  call void @printIntLine(i32 %13), !dbg !129\l
+}"];
+	all_ll_goodB2G1BB27-> all_ll_goodB2G1BB29;
+	all_ll_goodB2G1BB29 [shape=record, label="{BB29:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:120\l
+  br label %if.end11, !dbg !130\l
+}"];
+	all_ll_goodB2G1BB29-> all_ll_goodB2G1BB24;
+	all_ll_goodB2G1BB24 [shape=record, label="{BB24:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:121\l
+  br label %if.end12, !dbg !131\l
+}"];
+	all_ll_goodB2G1BB24-> all_ll_goodB2G1BB22;
+	all_ll_goodB2G1BB22 [shape=record, label="{BB22:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_028/source_code/CWE606_Unchecked_Loop_Condition__char_environment_03.c:124\l
+  ret void, !dbg !132\l
+}"];
+}

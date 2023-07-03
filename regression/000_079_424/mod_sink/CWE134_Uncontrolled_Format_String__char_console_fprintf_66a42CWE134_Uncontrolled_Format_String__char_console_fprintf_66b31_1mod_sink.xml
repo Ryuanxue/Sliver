@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<root>
+ <sinkarg name="data" newname="_CWE134_Uncontrolled_Format_String__char_console_fprintf_66b_badSink_data_0" kind="one_ptr" type="char"/>
+</root>

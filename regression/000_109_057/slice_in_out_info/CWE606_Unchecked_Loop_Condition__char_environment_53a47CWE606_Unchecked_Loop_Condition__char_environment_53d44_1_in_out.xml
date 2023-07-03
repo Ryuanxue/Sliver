@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="47"/>
+ <in_funname value="CWE606_Unchecked_Loop_Condition__char_environment_53_bad"/>
+ <slicefun funname="CWE606_Unchecked_Loop_Condition__char_environment_53a47CWE606_Unchecked_Loop_Condition__char_environment_53d44_1"/>
+ <srcfun funname="getenv"/>
+ <out_line value="44"/>
+ <out_funname value="CWE606_Unchecked_Loop_Condition__char_environment_53d_badSink"/>
+ <in_file value="CWE606_Unchecked_Loop_Condition__char_environment_53a.c"/>
+ <src_sta value="_CWE606_Unchecked_Loop_Condition__char_environment_53_bad_environment_0 = getenv(&quot;ADD&quot;)"/>
+ <out_file value="CWE606_Unchecked_Loop_Condition__char_environment_53d.c"/>
+ <in_vars>
+  <in_var rawname="environment" newname="_CWE606_Unchecked_Loop_Condition__char_environment_53_bad_environment_0" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="n" newname="_CWE606_Unchecked_Loop_Condition__char_environment_53d_badSink_n_0" kind="basic" type="int"/>
+ </out_vars>
+ <gen_fun value="CWE606_Unchecked_Loop_Condition__char_environment_53a47CWE606_Unchecked_Loop_Condition__char_environment_53d44_1"/>
+ <gen_fun_params>
+  <param name="_CWE606_Unchecked_Loop_Condition__char_environment_53_bad_environment_0" kind="one_ptr" type="char"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_environment_53_bad" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_057/source_code/CWE606_Unchecked_Loop_Condition__char_environment_53a.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_environment_53b_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_057/source_code/CWE606_Unchecked_Loop_Condition__char_environment_53b.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_environment_53c_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_057/source_code/CWE606_Unchecked_Loop_Condition__char_environment_53c.c"/>
+  <fun funname="CWE606_Unchecked_Loop_Condition__char_environment_53d_badSink" file="/home/raoxue/Desktop/MemVerif/workspace/000_109_057/source_code/CWE606_Unchecked_Loop_Condition__char_environment_53d.c"/>
+ </funsig>
+ <Gvars/>
+</root>

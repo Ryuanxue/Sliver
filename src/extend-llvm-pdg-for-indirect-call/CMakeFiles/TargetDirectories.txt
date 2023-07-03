@@ -1,0 +1,10 @@
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/install/local.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/install.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/list_install_components.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/rebuild_cache.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/acc_gen.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/edit_cache.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/omp_gen.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/install/strip.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/indcall.dir
+/home/raoxue/Desktop/My_sliver/Sliver/src/extend-llvm-pdg-for-indirect-call/CMakeFiles/intrinsics_gen.dir

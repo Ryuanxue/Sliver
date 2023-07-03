@@ -1,0 +1,19 @@
+digraph "CFG for'CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSink' function" {
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSink_start[shape=record,label="{CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSink_start}"];
+	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSink_start-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSinkBB0;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSinkBB0 [shape=record, label="{BB0:\l\l/:415\l
+  %data.addr = alloca i32, align 4\l
+/:415\l
+  store i32 %data, i32* %data.addr, align 4\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_739/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b.c:47\l
+  call void @llvm.dbg.declare(metadata i32* %data.addr, metadata !11, metadata !DIExpression()), !dbg !12\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_739/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b.c:49\l
+  %0 = load i32, i32* %data.addr, align 4, !dbg !13\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_739/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b.c:49\l
+  call void @CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53c_badSink(i32 %0), !dbg !14\l
+}"];
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSinkBB0-> CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSinkBB1;
+	CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_ll_CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b_badSinkBB1 [shape=record, label="{BB1:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_739/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_listen_socket_53b.c:50\l
+  ret void, !dbg !15\l
+}"];
+}

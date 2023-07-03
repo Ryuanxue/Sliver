@@ -1,0 +1,32 @@
+digraph "CFG for'all_ll_printSinkLine' function" {
+	BBall_ll_printSinkLine_start[shape=record,label="{all_ll_printSinkLine_start}"];
+	BBall_ll_printSinkLine_start-> all_ll_printSinkLineBB148;
+	all_ll_printSinkLineBB148 [shape=record, label="{BB148:\l\l/:104482720\l
+  %line.addr = alloca i8*, align 8\l
+/:104482720\l
+  store i8* %line, i8** %line.addr, align 8\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/io.c:20\l
+  call void @llvm.dbg.declare(metadata i8** %line.addr, metadata !641, metadata !DIExpression()), !dbg !642\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/io.c:22\l
+  %0 = load i8*, i8** %line.addr, align 8, !dbg !126\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/io.c:22\l
+  %cmp = icmp ne i8* %0, null, !dbg !128\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/io.c:22\l
+  br i1 %cmp, label %if.then, label %if.end, !dbg !129\l
+}"];
+	all_ll_printSinkLineBB148-> all_ll_printSinkLineBB149;
+	all_ll_printSinkLineBB148-> all_ll_printSinkLineBB150;
+	all_ll_printSinkLineBB149 [shape=record, label="{BB149:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/io.c:24\l
+  %1 = load i8*, i8** %line.addr, align 8, !dbg !130\l
+/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/io.c:24\l
+  %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.1.12, i64 0, i64 0), i8* %1), !dbg !132\l
+}"];
+	all_ll_printSinkLineBB149-> all_ll_printSinkLineBB151;
+	all_ll_printSinkLineBB151 [shape=record, label="{BB151:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/io.c:25\l
+  br label %if.end, !dbg !133\l
+}"];
+	all_ll_printSinkLineBB151-> all_ll_printSinkLineBB150;
+	all_ll_printSinkLineBB150 [shape=record, label="{BB150:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_727/source_code/io.c:26\l
+  ret void, !dbg !134\l
+}"];
+}
