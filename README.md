@@ -33,13 +33,13 @@ export LD_LIBRARY_PATH=/path/to/Sliver/lib:$LD_LIBRARY_PATH
 ### 预处理脚本： 解耦源代码， 删除static 和 const
 运行 python3 pre_process.py path/to/project (eg. python3 pre_process.py examples/000_062_516)
 ### 生成slice
-**命令：**./gen_slice_run pro-name src_cfile src_line sink_cfile sink_line depth srcfun arg-num(0:表示返回值，1：表示第一个参数，2：表示第二个参数，以此类推)
+**命令：** './gen_slice_run pro-name src_cfile src_line sink_cfile sink_line depth srcfun arg-num' (0:表示返回值，1：表示第一个参数，2：表示第二个参数，以此类推)
 
 **例子1：000_062_516**
- ./gen_slice_run 000_062_516 CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01.c 84 CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01.c 113 50 recv 2
+ './gen_slice_run 000_062_516 CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01.c 84 CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01.c 113 50 recv 2'
 
 **例子2：moti_exp**
- ./gen_slice_run moti_exp motivating_ex1.c 27 motivating_ex1.c 18 50 op 2
+ './gen_slice_run moti_exp motivating_ex1.c 27 motivating_ex1.c 18 50 op 2'
 
 **一次性对example/下的所有000_*的testcase进行预处理和生成slice**
 python3 test_all_groundtruth_testcase.py
