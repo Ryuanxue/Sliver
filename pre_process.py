@@ -191,24 +191,30 @@ def copydir(inputdir, outdir):
 #自动解耦一个项目
 def auto_genslice_one(abspath_project):
 	#将abspath_project分解为dirname和filename
-	inputdir = os.path.dirname(abspath_project)
-	dirname = os.path.basename(abspath_project)
-	print(inputdir)
-	print(dirname)
+    #获得abspath_project的绝对路径
+    abspath_project = os.path.abspath(abspath_project)
+
+    #如果abspath_project最后一个字符是'/'，删除最后一个字符
+    if abspath_project[-1] == '/':
+        abspath_project = abspath_project[:-1]
+    inputdir = os.path.dirname(abspath_project)
+    dirname = os.path.basename(abspath_project)
+    print(inputdir)
+    print(dirname)
 	# inputdir_path = inputdir +'/'+ dirname
     #解耦原代码到workprodir
-	workprodir = "workspace/" + dirname+"/"
-	if not os.path.exists(workprodir):
-		os.makedirs(workprodir)
-	auto_decoup_one(dirname ,workprodir, inputdir)
+    workprodir = "workspace/" + dirname+"/"
+    if not os.path.exists(workprodir):
+	    os.makedirs(workprodir)
+    auto_decoup_one(dirname ,workprodir, inputdir)
 
-	output_dir="workspace/"+dirname+"/source_code"
-	print(output_dir)
+    output_dir="workspace/"+dirname+"/source_code"
+    print(output_dir)
    	#复制workprodir中的文件到
-	if not os.path.exists(output_dir):
-		os.makedirs(output_dir)
-	copydir(workprodir+dirname,output_dir)
-	shutil.rmtree(workprodir+dirname) #删除解耦后的临时文件
+    if not os.path.exists(output_dir):
+    	os.makedirs(output_dir)
+    copydir(workprodir+dirname,output_dir)
+    shutil.rmtree(workprodir+dirname) #删除解耦后的临时文件
 
 #main入口，调用auto_genslice_one
 if __name__ == '__main__':

@@ -8099,6 +8099,8 @@ def abstract_sink(firstast,sliceastlist, ind):
         print('findsinkk,,,,,,')
         print(idlist)
         for idname in idlist:
+            print("sink argnum")
+            print(idname)
             if idname not in fun_localval_delast_map and idname not in global_vaname_declast_map:
                 continue
             if idname == 'stdout':
@@ -8107,6 +8109,10 @@ def abstract_sink(firstast,sliceastlist, ind):
                 sinkast = fun_localval_delast_map[idname]
             elif idname in global_vaname_declast_map.keys():
                 sinkast = global_vaname_declast_map[idname]
+
+            if type(sinkast.type)==c_ast.ArrayDecl:
+                sinkast.type=c_ast.PtrDecl(type=sinkast.type.type,quals=[])
+            print(sinkast)
             if type(sinkast.type)!=c_ast.ArrayDecl:
                 sink_var_ast_list.append(sinkast)
 
@@ -8154,6 +8160,8 @@ def abstract_sink(firstast,sliceastlist, ind):
 
         else:
             opsinkast=get_opsink_callast()
+            print("opsinkast")
+            print(opsinkast)
             sliceastlist.insert(ind, opsinkast)
             sliceastlist.remove(firstast)
         isabstract_sink=True
@@ -8264,6 +8272,8 @@ def abstartct_source_main(sliceastlist):
 def get_opsink_callast():
     funcallsta = c_ast.FuncCall(name=c_ast.ID(name="opsink"),
                                 args=c_ast.ExprList(exprs=[]))
+    print("opsink function")
+    print(sink_var_ast_list)
     for arg in sink_var_ast_list:
         idast=c_ast.ID(name=arg.name)
         funcallsta.args.exprs.append(idast)
@@ -8385,6 +8395,20 @@ def get_sta_all_linenum(sta):
         elif type(sta)==c_ast.FuncCall:
             for ele11 in sta.args.exprs:
                 linenumlist.extend(get_sta_all_linenum(ele11))
+
+#获得astnode的所有行号
+def get_sta_all_linenum(c):
+    linenumlist=[]
+    if c.coord is not None:
+        linenumlist.append(int(str(c.coord).split(":")[1]))
+    for child in c:
+        if child is None:
+            continue
+        else:
+            if child.coord is not None:
+                linenumlist.append(int(str(child.coord).split(":")[1]))
+            linenumlist.extend(get_sta_all_linenum(child))
+    return linenumlist
         
 
 
@@ -8434,12 +8458,17 @@ def abstract_sink_main(sliceastlist):
         #如果label中的语句数量大于1，那么就是多个label语句，需要递归遍历
         if type(ele)==c_ast.Label:
             # lineelist=(ele.stmt)
-            lineelist=[]
+            # lineelist=[]
             last_num=-1
-            get_all_sink_linenum(ele.stmt,last_num,lineelist)
+            # get_all_sink_linenum(ele.stmt,last_num,lineelist)
+            linelist=get_sta_all_linenum(ele)
+            print("sink astast")
+            print(linelist)
+            print(ele)
 
             #判断是否sinkline在lineelist中
-            if endline in lineelist:
+            if endline in linelist:
+                
                 lastast=ele
                 break
 
@@ -8468,13 +8497,22 @@ def abstract_sink_main(sliceastlist):
         else:
             get_sta_decl_ID(lastast, idlist)
         for idname in idlist:
+            print("sink argname")
+            print(idname)
             if idname == 'stdout':
                 continue
             if idname in fun_localval_delast_map.keys():
                 sinkast = fun_localval_delast_map[idname]
             else:
                 sinkast = global_vaname_declast_map[idname]
-            if type(sinkast)!=c_ast.ArrayDecl:
+
+
+            #如果sinkast的类型是c_ast.ArrayDecl，将此节点转换为c_ast.PtrDecl
+            if type(sinkast.type)==c_ast.ArrayDecl:
+                sinkast.type=c_ast.PtrDecl(type=sinkast.type.type,quals=[])
+            print(sinkast)
+            print(type(sinkast))
+            if type(sinkast.type)!=c_ast.ArrayDecl:
                 sink_var_ast_list.append(sinkast)
 
         if isFUZZ:
@@ -8501,6 +8539,8 @@ def abstract_sink_main(sliceastlist):
             sink_stament_list.append(generator.visit(sinkast))
         else:
             opsinkast=get_opsink_callast()
+            print("opsinkast")
+            print(opsinkast)
             sliceastlist.pop()
             sliceastlist.append(opsinkast)
         print("sinksta....modi after")
@@ -9320,7 +9360,7 @@ if __name__ == '__main__':
                 print(p.get_name())
                 # print(p)
             
-            # continue
+            
             ispath_curr = judge_path(flist)
             # # 只有正确合并的路径才进行代码生成
             # gen_funname1 = gen_funname + "_" + str(key_inc)

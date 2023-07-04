@@ -95,7 +95,7 @@ if [ ! -f workspace/$CPRO/ind_call.xml ]; then
 	cd workspace"/"$CPRO"/source_code/"$SUB_DIR
 	#llvm-link连接所有的.ll文件获得完整的global .ll文件
 	llvm-link *.ll -S -o whoproject.ll
-	opt -load /home/raoxue/Desktop/Sliver/lib/libindcall.so -loc-ind whoproject.ll
+	opt -load libindcall.so -loc-ind whoproject.ll
 	rm whoproject.ll
 	if [ -f stru_mem_ind_call.xml ]; then
 		rm stru_mem_ind_call.xml

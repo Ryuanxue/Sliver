@@ -387,7 +387,7 @@ class CGenerator(object):
             #
             if typ in (
                 c_ast.Decl, c_ast.Assignment, c_ast.FuncCall) and n.comment:
-                return indent + self.visit(n) + ';  /* +'+ n.comment +' */\n'
+                return indent + self.visit(n) + ';  /* '+ n.comment +' */\n'
             else:
                 return indent + self.visit(n) + ';\n'
         elif typ in (c_ast.Compound,):
