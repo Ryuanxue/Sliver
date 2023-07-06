@@ -1,47 +1,99 @@
-# Sliver
-子模块
-1. lib 存放编译好的共享库
-2. src 基于llvm的pass源代码
-3. script python脚本和shell脚本
-4. regression 回归测试（暂时不知道怎么编写）
+# Sliver: A Scalable Slicing-based Verification for Information Flow Security
 
+## Dependency
 
-## 需求
-1.安装llvm-12
-下载 sudo apt-get install llvm-12 llvm-12-dev clang-12
-### 配置环境变量
-export PATH=$PATH:/usr/lib/llvm-12/bin
+* Sliver has been tested on Ubuntu 20.04.
 
-export LD_LIBRARY=/usr/lib/llvm-12/lib
-
-2. 安装pydot
-
+* Install llvm-12
+```
+sudo apt-get install llvm-12 llvm-12-dev clang-12
+```
+* Install pydot
+```
 pip3 install pydot
-
-3.安装pycparser
-
+```
+* Install the modified pycparser
+```
 cd Sliver/script/pycparser-release_v2.20
+pip install -e . 
+```
 
-pip install -e .  （安装开发版本）
+* Environment variables settings
+  * Edit `~/.bashrc` and add:
+```
+export PATH="$PATH:/usr/lib/llvm-12/bin"
+export LD_LIBRARY=/usr/lib/llvm-12/lib
+export LD_LIBRARY_PATH="/path/to/Sliver/lib:$LD_LIBRARY_PATH"
+```
+
+## Usage
+
+### Slice Generation
+
+#### Preprocessing.
+```
+python3 pre_process.py [path/to/project]
+```
+For example,
+```
+python3 pre_process.py examples/000_062_516
+```
+#### Generating slices.
+```
+./gen_slice_run [pro-name] [src_cfile] [src_line] [sink_cfile] [sink_line] [depth] [srcfun] [src-arg-id] [sinkfun] [sink-arg-id]
+```
+- [pro-name]: Directory of the test case.
+- [src_cfile]: The C code file's subpath containing data source.
+- [src_line]: Line number of the data source in the code file.
+- [sink_cfile]: The C code file's subpath containing data sink.
+- [sink_line]: Line number of the data sink in the code file.
+- [depth]: Depth of the DFS algorithm used for searching the paths from source to sink.
+- [srcfun]: Function name of the data source.
+- [src-arg-id]:
+  - 0: the return value is sensitive data
+  - 1: the first argument of the data source function call is sensitive data
+  - 2: the second argument of the data source function call is sensitive data, etc.
+- [sinkfun]: Function name of the data sink.
+- [sink-arg-id]: Similar to `src-arg-id`.
+  
+- Note: Sliver has a built-in identification to the sink variables on specific code location. Thus, in many cases, the users do not have to specify `sinkfun` or `sink-arg-id`.
+
+Example:
+```
+./gen_slice_run 000_062_516 CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01.c 84 CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01.c 113 50 recv 2
+```
+
+Example 2:
+```
+./gen_slice_run moti_exp motivating_ex1.c 27 motivating_ex1.c 18 50 op 2
+```
+
+ 
+### Adaptive Self-Composition
+
+(*to be released.*)
+
+## Batch-job test
+
+- Preprocessing and generating slices for all the examples in paths `example/000_*`
+```
+python3 test_all_groundtruth_testcase.py
+```
 
 
-设置环境变量
-export LD_LIBRARY_PATH=/path/to/Sliver/lib:$LD_LIBRARY_PATH
+## Directory Structure
 
+* lib
+  * Shared libraries used by Sliver.
+* src
+  * LLVM-related source code of Sliver. (*to release more.*)
+* script
+  * Python scripts and shell scripts of Sliver.
+* regression
+  * regression tests.
 
-## 功能1：生成slice
-### 预处理脚本： 解耦源代码， 删除static 和 const
-运行 python3 pre_process.py path/to/project (eg. python3 pre_process.py examples/000_062_516)
-### 生成slice
-**命令：** "./gen_slice_run pro-name src_cfile src_line sink_cfile sink_line depth srcfun arg-num" (0:表示返回值，1：表示第一个参数，2：表示第二个参数，以此类推)
+## Contributors
 
-**例子1：000_062_516**
- "./gen_slice_run 000_062_516 CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01.c 84 CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01.c 113 50 recv 2"
-
-**例子2：moti_exp**
- "./gen_slice_run moti_exp motivating_ex1.c 27 motivating_ex1.c 18 50 op 2"
-
-**一次性对example/下的所有000_开头的testcase进行预处理和生成slice** 
- "python3 test_all_groundtruth_testcase.py"
-
+* Xue Rao (xrao AT stu DOT xidian DOT edu DOT cn)
+* Cong Sun (suncong AT xidian DOT edu DOT cn)
 
