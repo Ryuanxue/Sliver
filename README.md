@@ -21,9 +21,9 @@ pip install -e .
 * Environment variables settings
   * Edit `~/.bashrc` and add:
 ```
-export PATH="$PATH:/usr/lib/llvm-12/bin"
+export PATH=$PATH:/usr/lib/llvm-12/bin
 export LD_LIBRARY=/usr/lib/llvm-12/lib
-export LD_LIBRARY_PATH="/path/to/Sliver/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH=/path/to/Sliver/lib:$LD_LIBRARY_PATH
 ```
 
 ## Usage
