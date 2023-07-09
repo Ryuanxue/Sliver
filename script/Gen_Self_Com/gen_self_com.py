@@ -1455,12 +1455,19 @@ def create_opsink1():
     tempstr=func_decl.substitute(var=tempstr)
     op_sink1_function.append(tempstr)
     op_sink1_function.append("{\n")
-    for j in range(0,i):
+    j=0
+    for t in sink_arg_type:
         leftname="sink_outputarg_"+str(j)
         rightname="arg"+str(j)
+        if "char" in t:
         # tempstr=strcpy_assigh.substitute(left=leftname,right=rightname)
-        tempstr = strcpy_assigh.substitute(dest=leftname, src=rightname)
+            tempstr = strcpy_assigh.substitute(dest=leftname, src=rightname)
+        elif "*" in t:
+            tempstr=memcpy_sta.substitute(dest=leftname,src=rightname,num=defalut_char_byte)
+        else:
+            tempstr=basic_assign.substitute(left=leftname,right=rightname)
         op_sink1_function.append('\t'+tempstr)
+        j=j+1
     op_sink1_function.append("}\n")
 
 def create_opsink2():
@@ -1484,12 +1491,19 @@ def create_opsink2():
     tempstr = func_decl.substitute(var=tempstr)
     op_sink2_function.append(tempstr)
     op_sink2_function.append("{\n")
-    for j in range(0, i):
+    j=0
+    for t in sink_arg_type:
         leftname = "sink_outputarg_copy_" + str(j)
         rightname = "arg" + str(j)
+        if "char" in t:
         # tempstr = strcpy_assigh.substitute(left=leftname, right=rightname)
-        tempstr = strcpy_assigh.substitute(dest=leftname, src=rightname)
+            tempstr = strcpy_assigh.substitute(dest=leftname, src=rightname)
+        elif "*" in t:
+            tempstr = memcpy_sta.substitute(dest=leftname, src=rightname, num=defalut_char_byte)
+        else:
+            tempstr = basic_assign.substitute(left=leftname, right=rightname)
         op_sink2_function.append('\t' + tempstr)
+        j=j+1
     op_sink2_function.append("}\n")
 
 if __name__ == '__main__':

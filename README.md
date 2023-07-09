@@ -68,14 +68,53 @@ Example 2:
 ./gen_slice_run moti_exp motivating_ex1.c 27 motivating_ex1.c 18 50 op 2
 ```
 
+### Security Level setting
+
+手动修改workspace/pro-name/sec_file/*.xml,将敏感变量的安全级别修改为‘H’
+如果source的类型是基础类型且不为常量，而不是自定义类型中的某个字段，则可以用脚本mod_secl_level.py自动修改pro_name/sec_file之下的安全级文件
+```
+python3 mod_sec_level.py [pro-name]
+```
+Example
+
+```
+python3 mod_sec_level.py 000_062_516
+```
+
  
 ### Adaptive Self-Composition
 
-(*to be released.*)
+```
+python3 gen_self_com.py [pro-name]
+```
+- [pro-name]: Directory of the test case.
+Example
+
+```
+python3 gen_self_com.py 000_062_516
+```
+
+### Verification
+
+
+```
+cd workspace/[pro-name]/self_com; cbmc [self_com_cfile] --function [self_com_fun] -I../code_gened -I../source_code ../code_gened/[slice_cfile] ../source_code/*.c --no-built-in-assertions -slice-formula --drop-unused-functions --unwind [num] --trace
+```
+- [pro-name]: Directory of the test case.
+- [self_com_cfile]: The self-composition C file corresponding to the 'slice' C file.
+- [self_com_fun]: The funcion name of self-composition.
+- [slice_cfile]: One slice generated from a pair of source-sink.
+- [num]: The number of loop unrolling, adjustable by oneself, with a value of an integer.
+
+Example:
+```
+cbmc CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_0184CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01113_1_self_com.c --function CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_0184CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01113_1_self_com -I../code_gened -I../source_code ../code_gened/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_0184CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_01113_1.c ../source_code/*.c --no-built-in-assertions -slice-formula --drop-unused-functions --unwind 11 --trace
+```
+- Note: If the C code to be verified contains a for loop with a fixed upper limit of n, it needs to be unrolled up to n+1 iterations. Failure to do so will result in no generation of VCCs (verification conditions), leading to a misleading 'Verification successful' outcome. The number of loop unrollings can be adjusted using the --unwind or --unwindset options.
 
 ## Batch-job test
 
-- Preprocessing and generating slices for all the examples in paths `example/000_*`
+- Preprocessing， generating slices， modifying security level file and self-composition for all the examples in paths `example/000_*`
 ```
 python3 test_all_groundtruth_testcase.py
 ```

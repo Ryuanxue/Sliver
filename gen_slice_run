@@ -38,7 +38,7 @@ CPRO=$1
 # #检查c项目绝对路径是否正确
 
 # if [ ! -d $CPRO_PATH ]; then
-# 	echo "c project path isn't exzist."
+# 	echo "c project path isn't exist."
 # 	exit 1
 # fi
 
@@ -151,3 +151,11 @@ echo "findpath end."
 time python3 lib_code_gen.py verif ../../workspace/$CPRO "$ICLUDE_DIR" "$MCRO" $TEMFILENAME $7 $8
 echo "generate slice code end."
 cd -
+
+#生成安全级文件
+python3 gen_seclevel_file.py "$ICLUDE_DIR" "$SUB_DIR" $CPRO
+echo "generate security level file end."
+
+#生成自合成文件
+# python3 gen_self_com.py  $CPRO
+# echo "generate self_com file end."
