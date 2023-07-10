@@ -73,7 +73,7 @@ Example 2:
 手动修改workspace/pro-name/sec_file/*.xml,将敏感变量的安全级别修改为‘H’
 如果source的类型是基础类型且不为常量，而不是自定义类型中的某个字段，则可以用脚本mod_secl_level.py自动修改pro_name/sec_file之下的安全级文件
 ```
-python3 mod_sec_level.py [pro-name]
+python3 set_sec_level.py [pro-name]
 ```
 Example
 
