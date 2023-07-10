@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <global name="sensitive_data" size="20" type="char" arr="20" level="L"/>
+</Root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<root>
+ <fun name="motivating_ex1_ll_auth"/>
+ <fun name="motivating_ex1_ll_sink_mtd"/>
+ <fun name="motivating_ex1_ll_main"/>
+ <fun name="motivating_ex1_ll_copy"/>
+ <fun name="motivating_ex1_ll_fail"/>
+ <fun name="motivating_ex1_ll_pass"/>
+ <fun name="motivating_ex1_ll_dummy"/>
+ <fun name="motivating_ex1_ll_op"/>
+</root>

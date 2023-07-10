@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<root>
+ <in_line value="27"/>
+ <in_funname value="auth"/>
+ <slicefun funname="motivating_ex127motivating_ex118_2"/>
+ <srcfun funname="op"/>
+ <out_line value="18"/>
+ <out_funname value="sink_mtd"/>
+ <in_file value="motivating_ex1.c"/>
+ <src_sta value="op(copy, __src__secret)"/>
+ <out_file value="motivating_ex1.c"/>
+ <in_vars>
+  <in_var rawname="__src__secret" newname="__src__secret" kind="one_ptr" type="char"/>
+ </in_vars>
+ <out_vars>
+  <out_var name="sensitive_data" newname="sensitive_data" kind="one_ptr" type="char"/>
+ </out_vars>
+ <gen_fun value="motivating_ex127motivating_ex118_2"/>
+ <gen_fun_params>
+  <param name="__src__secret" kind="one_ptr" type="char"/>
+  <param name="_main_argv_0" kind="two_ptr" type="char"/>
+  <param name="auth_return_" kind="basic" type="int"/>
+ </gen_fun_params>
+ <funsig>
+  <fun funname="auth" file="/home/raoxue/Desktop/My_sliver/Sliver/workspace/moti_exp/source_code/motivating_ex1.c"/>
+  <fun funname="main" file="/home/raoxue/Desktop/My_sliver/Sliver/workspace/moti_exp/source_code/motivating_ex1.c"/>
+  <fun funname="fail" file="/home/raoxue/Desktop/My_sliver/Sliver/workspace/moti_exp/source_code/motivating_ex1.c"/>
+  <fun funname="sink_mtd" file="/home/raoxue/Desktop/My_sliver/Sliver/workspace/moti_exp/source_code/motivating_ex1.c"/>
+ </funsig>
+ <Gvars>
+  <gvar name="sensitive_data"/>
+ </Gvars>
+</root>
