@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<Root>
-    <arg name="__src__secret" size="8" ptr="*" type="char" const="" level="H" />
-    <arg name="_main_argv_0" size="8" ptr="**" type="char" const="" level="L" />
-    <arg name="auth_return_" size="4" type="int" const="" ptr="" level="L" />
-</Root>

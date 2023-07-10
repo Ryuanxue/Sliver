@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Root>
-    <ind_loc info="/home/raoxue/Desktop/My_sliver/Sliver/workspace/moti_exp/source_code/motivating_ex1.c:22">
-        <ind_callee funname="copy" funsig="char* (*)( char*,char*)"/>
-        <ind_callee funname="strcpy" funsig=")"/>
-    </ind_loc>
-</Root>

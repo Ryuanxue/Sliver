@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="sensitive_data" newname="sensitive_data" kind="one_ptr" type="char"/>
- <global name="sensitive_data" newname="sensitive_data" kind="one_ptr" type="char"/>
-</root>
