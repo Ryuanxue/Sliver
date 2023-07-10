@@ -78,7 +78,7 @@ python3 mod_sec_level.py [pro-name]
 Example
 
 ```
-python3 mod_sec_level.py 000_062_516
+python3 set_sec_level.py 000_062_516
 ```
 
  

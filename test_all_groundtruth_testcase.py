@@ -85,7 +85,7 @@ def auto_genslice_one(dirname):
             print(output)
     
     #修改安全级
-    command="python3 mod_sec_level.py "+dirname
+    command="python3 set_sec_level.py "+dirname
     (status, output) = subprocess.getstatusoutput(command)
     #自合成
     command="python3 gen_self_com.py "+dirname
