@@ -623,34 +623,34 @@ bool sliver::SLICE_INSTRUMENT::runOnModule(Module &M)
                     	break;
                 }  
 
-                for (auto bb_iter=F->begin();bb_iter!=F->end();++bb_iter)//基本块
-                {
-                    for (auto ins_iter=bb_iter->begin();ins_iter!=bb_iter->end();++ins_iter)//指令
-                    {
-                        Instruction *inst=&*ins_iter;
+                // for (auto bb_iter=F->begin();bb_iter!=F->end();++bb_iter)//基本块
+                // {
+                //     for (auto ins_iter=bb_iter->begin();ins_iter!=bb_iter->end();++ins_iter)//指令
+                //     {
+                //         Instruction *inst=&*ins_iter;
                         
-                        unsigned Line;
-                        if (DILocation *Loc = inst->getDebugLoc())
-                        {                                                    
-                            Line = Loc->getLine();
-                        }
+                //         unsigned Line;
+                //         if (DILocation *Loc = inst->getDebugLoc())
+                //         {                                                    
+                //             Line = Loc->getLine();
+                //         }
                         
 
-                        // //"""插装sink"""
-                        if (Line==sinkline)
-                        {
-                        	if ((sinkkind=="one_ptr"||sinkkind=="one_arr") && (sinktype=="char" || sinktype=="wchar_t"))
-                        	instrument_sink_charptr(M,inst,sinkname,varname_allocainst_map);
-                        	else if (sinkkind=="basic")
-                        		instrument_sink_basic(M,inst,sinkname,varname_allocainst_map);
-                        	issinkinst=true;
-                        	break;
-                        }
+                //         // //"""插装sink"""
+                //         if (Line==sinkline)
+                //         {
+                //         	if ((sinkkind=="one_ptr"||sinkkind=="one_arr") && (sinktype=="char" || sinktype=="wchar_t"))
+                //         	instrument_sink_charptr(M,inst,sinkname,varname_allocainst_map);
+                //         	else if (sinkkind=="basic")
+                //         		instrument_sink_basic(M,inst,sinkname,varname_allocainst_map);
+                //         	issinkinst=true;
+                //         	break;
+                //         }
 
-                    }
-                    if (issinkinst)
-                    	break;
-                }     
+                //     }
+                //     if (issinkinst)
+                //     	break;
+                // }     
                 
             }
 	

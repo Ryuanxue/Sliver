@@ -417,6 +417,9 @@ def gen_final_startpart(line_ast, genfunname, gotolabel, labeldefine, slice_in_f
 
 
 
+
+
+
 def modif_ret(tempsta, nextfunname, ret_name):
     """
     如果函数调用有返回值，将函数调用部分转换为nextfunname的return值
@@ -427,7 +430,11 @@ def modif_ret(tempsta, nextfunname, ret_name):
     """
     print("modif_ret ..")
     print(tempsta)
+    print(nextfunname)
     for l in tempsta:
+        print(l)
+        print(type(l))
+        print(type(tempsta))
         if type(l) == c_ast.FuncCall and l.name.name == nextfunname:
             if type(tempsta) == c_ast.Assignment:
                 tempsta.rvalue = c_ast.ID(name=ret_name)
@@ -444,7 +451,7 @@ def modif_ret(tempsta, nextfunname, ret_name):
                 tempsta.cond=c_ast.ID(name=ret_name)
             return
         else:
-           return modif_ret(l, nextfunname, ret_name)
+            modif_ret(l, nextfunname, ret_name)
 
 
 def get_actual_parm(c, rdic):
@@ -6924,7 +6931,10 @@ def inline_two_fun_v3(callerbody,calleeast,callerfunname,calleefuname,dec_inc_fl
                         if type(tempsta) == c_ast.FuncCall or type(tempsta) == c_ast.Return:
                             parentnode.remove(tempsta)
                         elif type(tempsta)==c_ast.Decl:
+                            print("modify decl")
                             modif_ret(tempsta,calleefuname,ret_name)
+                            print("after modify decl")
+                            print(tempsta)
                             ind=ind+1
                         else:
                             tempsta.rvalue = c_ast.ID(name=ret_name)
@@ -8110,6 +8120,7 @@ def abstract_sink(firstast,sliceastlist, ind):
             elif idname in global_vaname_declast_map.keys():
                 sinkast = global_vaname_declast_map[idname]
 
+            sinkast=copy.deepcopy(sinkast)
             if type(sinkast.type)==c_ast.ArrayDecl:
                 sinkast.type=c_ast.PtrDecl(type=sinkast.type.type,quals=[])
             print(sinkast)
@@ -8508,6 +8519,7 @@ def abstract_sink_main(sliceastlist):
 
 
             #如果sinkast的类型是c_ast.ArrayDecl，将此节点转换为c_ast.PtrDecl
+            sinkast=copy.deepcopy(sinkast)
             if type(sinkast.type)==c_ast.ArrayDecl:
                 sinkast.type=c_ast.PtrDecl(type=sinkast.type.type,quals=[])
             print(sinkast)
@@ -8933,10 +8945,10 @@ def output_slice_code(sliceastlist):
         funparam.append(funptropsink)
 
 
-    print("finally function")
-    for ele  in fundef.ext[0].body.block_items:
-        print(ele)
-        print(generator.visit(ele))
+    # print("finally function")
+    # for ele  in fundef.ext[0].body.block_items:
+    #     print(ele)
+    #     print(generator.visit(ele))
 
     sizecount = generator.visit(fundef).count("globalReturnsTrueOrFalse()")
     if sizecount > 0:

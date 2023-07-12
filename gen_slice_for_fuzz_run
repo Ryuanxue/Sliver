@@ -1,0 +1,158 @@
+#!/bin/bash
+
+#脚本从配置文件读取，现在改为从控制台读取
+
+SUB_DIR=   #C项目中待验证的子项目，如果没有指定子项目，则生成完整的C项目的icfg，此选项可以指定多个子目录
+ICLUDE_DIR=""  #编译时头文件所在的目录
+CLANG_FLAG="clang -O0 -g -S -emit-llvm -fno-discard-value-names"  #clang编译时的选型，此选型不用修改
+MCRO=""
+CPRO=$1
+# CPRO_PATH=$2
+
+# #检查C项目
+# if [ $CPRO == "" ]; then 
+# 	echo "111"
+# 	exit 1
+
+# fi
+# #检查c项目的绝对路径
+# if [[ $CPRO_PATH == "" ]]; then
+# 	echo "22"
+# 	exit 1
+# fi
+
+
+# #检查c项目绝对路径是否正确
+
+# if [ ! -d $CPRO_PATH ]; then
+# 	echo "c project path isn't exzist."
+# 	exit 1
+# fi
+
+# #调用python脚本进行预处理将C项目复制到工作目录中
+# inputdir=$CPRO_PATH
+# outdir=workspace_fuzz/$CPRO"/source_code"
+# echo $outdir
+# if [ ! -d $outdir ]; then
+# 	echo "outdir don't exsit"
+# 	mkdir $outdir
+# 	python3 proprocess/copy_dir_delete_cost_static.py $inputdir $outdir
+# fi
+
+#检查子项目路径是否正确
+# if [ ! -d $outdir"/"$SUB_DIR ]; then
+# 	echo "333"
+# fi
+
+# #编译待验证的模块中的.c为.ll,分为全编译还是部分编译
+# if [[ $SUB_DIR == "" ]]; then
+# 	echo "lll"
+# fi
+# echo "rrr"
+#编译source_code中的.c文件为.ll文件
+cd workspace_fuzz"/"$CPRO"/source_code/"$SUB_DIR
+pwd
+for file in `ls *.c`;
+do
+	echo $file
+	if [ ! -f ${file%.*}".ll" ]; then
+		echo "$CLANG_FLAG $ICLUDE_DIR $MCRO $file"
+		`$CLANG_FLAG $ICLUDE_DIR $MCRO $file`
+	fi
+done
+cd -
+#输出编译.c到.ll结束
+echo "compile .c to .ll end."
+#生成cfg
+cd script/Gen_Graph
+# if [ ! -f gen_cfg_dot_$CPRO ]; then
+if [ ! -d ../../workspace_fuzz/$CPRO"/cfg_dot" ]; then
+	mkdir ../../workspace_fuzz/$CPRO/cfg_dot
+fi
+python3 drive_gen_cfg.py ../../workspace_fuzz"/"$CPRO"/source_code/"$SUB_DIR ../../workspace_fuzz"/"$CPRO"/cfg_dot"
+	# rm gen_cfg_dot*
+	# touch gen_cfg_dot_$CPRO
+
+cd -
+echo "generate cfg end."
+
+#获得函数指针间接调用
+if [ ! -f workspace_fuzz/$CPRO/ind_call.xml ]; then
+	cd workspace_fuzz"/"$CPRO"/source_code/"$SUB_DIR
+	#llvm-link连接所有的.ll文件获得完整的global .ll文件
+	llvm-link *.ll -S -o whoproject.ll
+	opt -load libindcall.so -loc-ind whoproject.ll
+	rm whoproject.ll
+	if [ -f stru_mem_ind_call.xml ]; then
+		rm stru_mem_ind_call.xml
+	fi
+	cd -
+	cd script/other_script
+	python3 get_struct_member_indirectcall.py ../../workspace_fuzz"/"$CPRO"/source_code/"$SUB_DIR
+	cd -
+	cp workspace_fuzz"/"$CPRO"/source_code/"$SUB_DIR"/ind_call.xml" workspace_fuzz/$CPRO
+	cp workspace_fuzz"/"$CPRO"/source_code/"$SUB_DIR"/stru_mem_ind_call.xml" workspace_fuzz/$CPRO
+fi
+
+echo "get indirect call end."
+
+#判断$CPRO_icfg.dot是否存在，不存在则生成
+# icfg_dot=$CPRO"_icfg.dot"
+if [ ! -f workspace_fuzz/$CPRO/$CPRO"_icfg.dot" ]; then
+	echo "begin generate icfg."
+	cd script/Gen_Graph
+	python3 gen_icfg.py $CPRO ../../workspace_fuzz/$CPRO
+	cd -
+fi
+
+echo "generate icfg end."
+#输入src文件，sink文件，src行号，sink行号，检查src文件与sink文件输入是否正确
+#输入source与sink的行号，但是行号必须是有意义的C语句，不能是空白行，或者是单纯的左右大括号{}，这里没有对行号做检查
+
+# read -p "Please input a C filename(source):" SOURCEFILE
+# while [ ! -f workspace/$CPRO"/source_code/"$SUB_DIR"/"$SOURCEFILE ]; do
+# 	echo "workspace/$CPRO"/source_code/"$SUB_DIR"/"$SOURCEFILE is not exist"
+# 	read -p "Please input a C filename(source):" SOURCEFILE
+# done
+# read -p "Please input a line number of source:" SOURCELINE
+# read -p "Please input a C filename(sink):" SINKFILE
+# while [ ! -f workspace/$CPRO"/source_code/"$SUB_DIR"/"$SINKFILE ]; do
+# 	echo "workspace/$CPRO"/source_code/"$SUB_DIR"/"$SOURCEFILE is not exist"
+# 	read -p "Please input a C filename(sink):" SINKFILE
+# done
+# read -p "Please input a line number of sink:" SINKLINE
+SOURCEFILE=$2
+SOURCELINE=$3
+SINKFILE=$4
+SINKLINE=$5
+
+TEMFILENAME=$SOURCEFILE$SOURCELINE$SINKFILE$SINKLINE
+#生成路径findpath,将此过程的输出放在一个文件中，这里最大的递归深度可以控制
+if [ ! -d workspace_fuzz/$CPRO"/code_gened" ];then
+	mkdir workspace_fuzz/$CPRO"/code_gened"
+fi
+
+cd script/Gen_Sliver_Code_ModSink
+time python3 one_source_to_sink.py $SOURCEFILE $SOURCELINE $SINKFILE $SINKLINE ../../workspace_fuzz/$CPRO/$CPRO ../../workspace_fuzz/$CPRO $TEMFILENAME $6
+echo "findpath end."
+time python3 lib_code_gen.py fuzz ../../workspace_fuzz/$CPRO "$ICLUDE_DIR" "$MCRO" $TEMFILENAME $7 $8
+echo "generate slice code end."
+cd -
+resust=`echo $?`
+
+
+if [ $resust -eq 1 ]
+then
+    # echo $result
+    echo "Download error, please check."
+    exit 66
+else
+	echo $resust
+fi
+cd -
+
+
+#自动化插装sour
+
+
+

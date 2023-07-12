@@ -120,6 +120,42 @@ python3 test_all_groundtruth_testcase.py
 ```
 
 
+## 一致性测试
+### dependency
+* Install afl-2.57
+
+Visit (https://github.com/google/AFL/releases) to download the release package for version 2.57. Run the following command to perform the installation.
+```
+cd path/to/AFL-2.57b
+make
+sudo make install
+```
+
+* Install libdesock
+We have compiled a shared library 'libdesock.so' file and stored it in directory 'lib'. If you want to compile the shared library ‘libdesock.so’ yourself, please visit https://github.com/fkie-cad/libdesock to download the source code, and refer to the 'README.md’ file given to compile the shared library 'libdesock.so', and copy the shared library file to in directory 'lib'."
+
+Note: Before using the afl command, you need to open a terminal to run the command ```echo core >/proc/sys/kernel/core_pattern``` with root privileges, do not close this terminal, and run the consistency test script in another terminal.
+
+
+### Examples 1： moti_exp
+```
+python3 pre_process_fuzz.py examples/moti_exp
+python3 moti_exp_fuzzing.py
+```
+### Examples 2： 000_062_516
+```
+python3 pre_process_fuzz.py examples/000_062_516
+python3 auto_groundtruth_fuzzing_test.py 000_062_516
+
+```
+
+### Batch-job test
+```
+python3 auto_groundtruth_fuzzing_test.py
+```
+
+
+
 ## Directory Structure
 
 * lib

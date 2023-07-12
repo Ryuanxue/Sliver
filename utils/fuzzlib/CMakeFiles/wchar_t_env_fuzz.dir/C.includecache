@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/raoxue/Desktop/MemVerif/fuzzlib/src/wchar_t_env_fuzz.c
+stddef.h
+-
+stdio.h
+-
+

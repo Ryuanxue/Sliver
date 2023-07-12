@@ -1,0 +1,8 @@
+编译：
+clang -fno-discard-value-names -O0 -g -emit-llvm -S  *.c -DINCLUDEMAIN -I ~/Desktop/AFL/experimental/argv_fuzzing
+自动进行基本块插装
+   合并两个in_out.xml文件
+   运行基本块自动插装命令
+afl-fuzz命令
+   afl-fuzz -i in1 -o out ./a.out
+

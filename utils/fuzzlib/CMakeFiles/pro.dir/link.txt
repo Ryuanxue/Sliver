@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC   -shared -Wl,-soname,libpro.so -o lib/libpro.so CMakeFiles/pro.dir/src/pro.c.o 
