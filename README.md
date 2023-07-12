@@ -124,7 +124,7 @@ python3 test_all_groundtruth_testcase.py
 ### dependency
 * Install afl-2.57
 
-Visit (https://github.com/google/AFL/releases) to download the release package for version 2.57. Run the following command to perform the installation.
+Visit https://github.com/google/AFL/releases to download the release package for version 2.57. Run the following command to perform the installation.
 ```
 cd path/to/AFL-2.57b
 make
