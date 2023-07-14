@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Root>
-    <arg name="_CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_61b_goodB2GSource_inputBuffer_0" size="8" ptr="*" type="char" const="" level="L"/>
-    <arg name="CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_61b_goodB2GSource_return_" size="4" type="int" const="" ptr="" level="L"/>
-</Root>

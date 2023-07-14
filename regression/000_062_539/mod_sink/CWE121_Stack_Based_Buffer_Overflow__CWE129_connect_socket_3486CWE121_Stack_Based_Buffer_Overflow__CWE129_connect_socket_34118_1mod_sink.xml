@@ -1,4 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="data" newname="_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_34_bad_data_1" kind="basic" type="int"/>
-</root>

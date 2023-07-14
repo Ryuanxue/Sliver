@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="data" newname="_goodG2B_data_0" kind="one_ptr" type="char"/>
- <global name="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22_goodB2G2Global" newname="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22_goodB2G2Global" kind="basic" type="int"/>
- <global name="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22_goodG2BGlobal" newname="CWE134_Uncontrolled_Format_String__char_environment_fprintf_22_goodG2BGlobal" kind="basic" type="int"/>
-</root>

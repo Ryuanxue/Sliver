@@ -1,7 +1,0 @@
-digraph "CFG for'CWE606_Unchecked_Loop_Condition__char_console_08_ll_staticReturnsTrue' function" {
-	BBCWE606_Unchecked_Loop_Condition__char_console_08_ll_staticReturnsTrue_start[shape=record,label="{CWE606_Unchecked_Loop_Condition__char_console_08_ll_staticReturnsTrue_start}"];
-	BBCWE606_Unchecked_Loop_Condition__char_console_08_ll_staticReturnsTrue_start-> CWE606_Unchecked_Loop_Condition__char_console_08_ll_staticReturnsTrueBB0;
-	CWE606_Unchecked_Loop_Condition__char_console_08_ll_staticReturnsTrueBB0 [shape=record, label="{BB0:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_985/source_code/CWE606_Unchecked_Loop_Condition__char_console_08.c:32\l
-  ret i32 1, !dbg !13\l
-}"];
-}

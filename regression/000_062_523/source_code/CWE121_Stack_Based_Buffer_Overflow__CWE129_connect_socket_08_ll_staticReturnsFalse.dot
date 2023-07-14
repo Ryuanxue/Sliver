@@ -1,7 +1,0 @@
-digraph "CFG for'CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_08_ll_staticReturnsFalse' function" {
-	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_08_ll_staticReturnsFalse_start[shape=record,label="{CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_08_ll_staticReturnsFalse_start}"];
-	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_08_ll_staticReturnsFalse_start-> CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_08_ll_staticReturnsFalseBB1;
-	CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_08_ll_staticReturnsFalseBB1 [shape=record, label="{BB1:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_523/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_08.c:53\l
-  ret i32 0, !dbg !68\l
-}"];
-}

@@ -1,7 +1,0 @@
-digraph "CFG for'all_ll_bad2' function" {
-	BBall_ll_bad2_start[shape=record,label="{all_ll_bad2_start}"];
-	BBall_ll_bad2_start-> all_ll_bad2BB231;
-	all_ll_bad2BB231 [shape=record, label="{BB231:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_108_936/source_code/io.c:199\l
-  ret void, !dbg !111\l
-}"];
-}

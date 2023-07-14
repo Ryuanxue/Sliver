@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Root>
-    <arg name="_CWE134_Uncontrolled_Format_String__char_console_vprintf_32_bad_data_1" size="8" ptr="*" type="char" const="" level="L"/>
-</Root>

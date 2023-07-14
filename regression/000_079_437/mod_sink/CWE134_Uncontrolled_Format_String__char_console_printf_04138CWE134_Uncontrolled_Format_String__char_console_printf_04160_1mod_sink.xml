@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="data" newname="_goodB2G2_data_0" kind="one_ptr" type="char"/>
- <global name="STATIC_CONST_TRUE" newname="STATIC_CONST_TRUE" kind="basic" type="int"/>
-</root>

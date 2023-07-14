@@ -1,7 +1,0 @@
-digraph "CFG for'io_ll_globalReturnsFalse' function" {
-	BBio_ll_globalReturnsFalse_start[shape=record,label="{io_ll_globalReturnsFalse_start}"];
-	BBio_ll_globalReturnsFalse_start-> io_ll_globalReturnsFalseBB66;
-	io_ll_globalReturnsFalseBB66 [shape=record, label="{BB66:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_734/source_code/io.c:163\l
-  ret i32 0, !dbg !52\l
-}"];
-}

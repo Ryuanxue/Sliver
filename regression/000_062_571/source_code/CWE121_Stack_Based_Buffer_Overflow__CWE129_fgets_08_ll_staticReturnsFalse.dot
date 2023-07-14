@@ -1,7 +1,0 @@
-digraph "CFG for'CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_08_ll_staticReturnsFalse' function" {
-	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_08_ll_staticReturnsFalse_start[shape=record,label="{CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_08_ll_staticReturnsFalse_start}"];
-	BBCWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_08_ll_staticReturnsFalse_start-> CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_08_ll_staticReturnsFalseBB1;
-	CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_08_ll_staticReturnsFalseBB1 [shape=record, label="{BB1:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_062_571/source_code/CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_08.c:33\l
-  ret i32 0, !dbg !13\l
-}"];
-}

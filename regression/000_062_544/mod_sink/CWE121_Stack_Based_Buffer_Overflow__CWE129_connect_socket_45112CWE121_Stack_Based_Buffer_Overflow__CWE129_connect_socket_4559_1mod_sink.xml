@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="data" newname="_badSink_data_0" kind="basic" type="int"/>
- <global name="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_45_badData" newname="CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_45_badData" kind="basic" type="int"/>
-</root>

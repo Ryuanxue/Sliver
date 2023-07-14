@@ -1,7 +1,0 @@
-digraph "CFG for'CWE134_Uncontrolled_Format_String__char_environment_printf_08_ll_staticReturnsFalse' function" {
-	BBCWE134_Uncontrolled_Format_String__char_environment_printf_08_ll_staticReturnsFalse_start[shape=record,label="{CWE134_Uncontrolled_Format_String__char_environment_printf_08_ll_staticReturnsFalse_start}"];
-	BBCWE134_Uncontrolled_Format_String__char_environment_printf_08_ll_staticReturnsFalse_start-> CWE134_Uncontrolled_Format_String__char_environment_printf_08_ll_staticReturnsFalseBB1;
-	CWE134_Uncontrolled_Format_String__char_environment_printf_08_ll_staticReturnsFalseBB1 [shape=record, label="{BB1:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_079_729/source_code/CWE134_Uncontrolled_Format_String__char_environment_printf_08.c:43\l
-  ret i32 0, !dbg !13\l
-}"];
-}

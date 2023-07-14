@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Root>
-    <arg name="_CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_12_bad_inputBuffer_0" size="8" ptr="*" type="char" const="" level="L"/>
-</Root>

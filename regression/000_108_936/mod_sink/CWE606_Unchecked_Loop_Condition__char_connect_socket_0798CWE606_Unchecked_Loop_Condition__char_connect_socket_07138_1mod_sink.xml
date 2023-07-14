@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="n" newname="_CWE606_Unchecked_Loop_Condition__char_connect_socket_07_bad_n_0" kind="basic" type="int"/>
- <global name="staticFive" newname="staticFive" kind="basic" type="int"/>
-</root>

@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="data" newname="_goodG2B2_data_0" kind="one_ptr" type="char"/>
- <global name="globalTrue" newname="globalTrue" kind="basic" type="int"/>
-</root>

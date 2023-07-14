@@ -1,4 +1,0 @@
-#include "_costom_header_.h"
-void CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_4230CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_4256_1(char *_badSource_inputBuffer_0, int badSource_return_, void (*opsink)(int _CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_42_bad_data_0));
-void CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_42116CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_4296_1(char *_goodB2GSource_inputBuffer_0, int goodB2GSource_return_, void (*opsink)(int _goodG2B_data_0));
-void CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_42116CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_42141_1(char *_goodB2GSource_inputBuffer_0, int goodB2GSource_return_, void (*opsink)(int _goodB2G_data_0));

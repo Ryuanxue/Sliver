@@ -16,12 +16,18 @@ pip3 install pydot
 ```
 sudo apt-get install cbmc
 ```
+* Install afl-2.57
+```
+git clone https://github.com/google/AFL.git
+cd path/to/AFL
+make
+sudo make install
+```
 * Install the modified pycparser
 ```
 cd Sliver/script/pycparser-release_v2.20
 pip install -e . 
 ```
-
 * Environment variables settings
   * Edit `~/.bashrc` and add:
 ```
@@ -115,48 +121,38 @@ cbmc CWE121_Stack_Based_Buffer_Overflow__CWE129_connect_socket_0184CWE121_Stack_
 ```
 - Note: If the C code to be verified contains a for-loop with a fixed upper limit of n, it needs to be unwinded up to n+1 iterations. Failing to set a proper loop unwinding option will fail the generation of VCCs (verification conditions), leading to a misleading 'Verification successful' result. The number of loop unwinding can be adjusted using the --unwind or --unwindset options.
 
+
+### Consistency Testing
+
+- Enabling `afl-fuzz` by configuring `core_pattern`:
+```
+sudo su
+echo core >/proc/sys/kernel/core_pattern
+```
+- Do not close this terminal, and run the consistency test scripts in another terminal.
+
+Examples 1: moti_exp
+```
+python3 pre_process_fuzz.py examples/moti_exp
+python3 moti_exp_fuzzing.py
+```
+Examples 2: 000_062_516
+```
+python3 pre_process_fuzz.py examples/000_062_516
+python3 auto_groundtruth_fuzzing_test.py 000_062_516
+```
+- TODO: please explain how to use the result of consistency testing because user should use the result to decide if the case can be delivered to the CBMC verification. And also explain how the user can read the code coverage rate.
+
 ## Batch-job test
 
 - Preprocessing， generating slices，setting security levels, and self-composition for all the examples in paths `example/000_*`
 ```
 python3 test_all_groundtruth_testcase.py
 ```
-
-
-## 一致性测试
-### dependency
-* Install afl-2.57
-
-Visit https://github.com/google/AFL/releases to download the release package for version 2.57. Run the following command to perform the installation.
-```
-cd path/to/AFL-2.57b
-make
-sudo make install
-```
-
-* Install libdesock
-We have compiled a shared library 'libdesock.so' file and stored it in directory 'lib'. If you want to compile the shared library ‘libdesock.so’ yourself, please visit https://github.com/fkie-cad/libdesock to download the source code, and refer to the 'README.md’ file given to compile the shared library 'libdesock.so', and copy the shared library file to in directory 'lib'."
-
-Note: Before using the afl command, you need to open a terminal to run the command ```echo core >/proc/sys/kernel/core_pattern``` with root privileges, do not close this terminal, and run the consistency test script in another terminal.
-
-
-### Examples 1： moti_exp
-```
-python3 pre_process_fuzz.py examples/moti_exp
-python3 moti_exp_fuzzing.py
-```
-### Examples 2： 000_062_516
-```
-python3 pre_process_fuzz.py examples/000_062_516
-python3 auto_groundtruth_fuzzing_test.py 000_062_516
-
-```
-
-### Batch-job test
+- Consistency testing:
 ```
 python3 auto_groundtruth_fuzzing_test.py
 ```
-
 
 
 ## Directory Structure
@@ -167,8 +163,10 @@ python3 auto_groundtruth_fuzzing_test.py
   * LLVM-related source code of Sliver. (*to release more.*)
 * script
   * Python scripts and shell scripts of Sliver.
-* regression
-  * regression tests.
+* examples
+  * Motivating example and test cases.
+* utils
+  * ...(TODO).
 
 ## Contributors
 

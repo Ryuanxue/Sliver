@@ -1,4 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="n" newname="_CWE606_Unchecked_Loop_Condition__char_console_51b_badSink_n_0" kind="basic" type="int"/>
-</root>

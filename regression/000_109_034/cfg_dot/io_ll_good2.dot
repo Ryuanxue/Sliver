@@ -1,7 +1,0 @@
-digraph "CFG for'io_ll_good2' function" {
-	BBio_ll_good2_start[shape=record,label="{io_ll_good2_start}"];
-	BBio_ll_good2_start-> io_ll_good2BB70;
-	io_ll_good2BB70 [shape=record, label="{BB70:\l\l/home/raoxue/Desktop/MemVerif/workspace/000_109_034/source_code/io.c:188\l
-  ret void, !dbg !52\l
-}"];
-}

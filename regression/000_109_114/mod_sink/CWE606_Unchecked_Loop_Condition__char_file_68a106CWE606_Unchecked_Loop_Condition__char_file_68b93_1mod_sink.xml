@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="n" newname="_CWE606_Unchecked_Loop_Condition__char_file_68b_goodB2GSink_n_0" kind="basic" type="int"/>
- <global name="CWE606_Unchecked_Loop_Condition__char_file_68_goodB2GData" newname="CWE606_Unchecked_Loop_Condition__char_file_68_goodB2GData" kind="one_ptr" type="char"/>
-</root>

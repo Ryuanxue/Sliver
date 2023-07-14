@@ -1,3 +1,0 @@
-#include "_costom_header_.h"
-void CWE134_Uncontrolled_Format_String__char_console_fprintf_52a41CWE134_Uncontrolled_Format_String__char_console_fprintf_52c29_1(char *_CWE134_Uncontrolled_Format_String__char_console_fprintf_52_bad_data_0, void (*opsink)(char *_CWE134_Uncontrolled_Format_String__char_console_fprintf_52_bad_data_0));
-void CWE134_Uncontrolled_Format_String__char_console_fprintf_52a92CWE134_Uncontrolled_Format_String__char_console_fprintf_52c47_1(char *_goodB2G_data_0, void (*opsink)(char *_goodB2G_data_0));

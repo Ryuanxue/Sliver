@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="data" newname="_goodB2G1_data_0" kind="one_ptr" type="char"/>
- <global name="CWE134_Uncontrolled_Format_String__char_console_fprintf_22_goodB2G1Global" newname="CWE134_Uncontrolled_Format_String__char_console_fprintf_22_goodB2G1Global" kind="basic" type="int"/>
-</root>

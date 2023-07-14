@@ -1,2 +1,0 @@
-#include "_costom_header_.h"
-void CWE134_Uncontrolled_Format_String__char_console_vprintf_3255CWE134_Uncontrolled_Format_String__char_console_vprintf_3277_1(char *_CWE134_Uncontrolled_Format_String__char_console_vprintf_32_bad_data_1, void (*opsink)(char *_CWE134_Uncontrolled_Format_String__char_console_vprintf_32_bad_data_2));

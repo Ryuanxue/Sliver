@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="data" newname="_goodB2G2_data_0" kind="basic" type="int"/>
- <global name="CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_22_goodB2G2Global" newname="CWE121_Stack_Based_Buffer_Overflow__CWE129_fgets_22_goodB2G2Global" kind="basic" type="int"/>
-</root>

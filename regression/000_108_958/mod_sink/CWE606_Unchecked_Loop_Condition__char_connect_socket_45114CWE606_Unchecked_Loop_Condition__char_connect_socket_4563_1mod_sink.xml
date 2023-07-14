@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="n" newname="_badSink_n_0" kind="basic" type="int"/>
- <global name="CWE606_Unchecked_Loop_Condition__char_connect_socket_45_badData" newname="CWE606_Unchecked_Loop_Condition__char_connect_socket_45_badData" kind="one_ptr" type="char"/>
-</root>

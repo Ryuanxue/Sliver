@@ -1,4 +1,0 @@
-<?xml version="1.0" ?>
-<root>
- <sinkarg name="n" newname="_badSink_n_0" kind="basic" type="int"/>
-</root>
