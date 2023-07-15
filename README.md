@@ -148,7 +148,7 @@ python3 auto_groundtruth_fuzzing_test.py 000_062_516
 
 ## Batch-job test
 
-- Preprocessing， generating slices，setting security levels, and self-composition for all the examples in paths `example/000_*`
+- Preprocessin, generating slices, setting security levels, self-composition, and verification for all the examples in paths `example/000_*`
 ```
 python3 test_all_groundtruth_testcase.py
 ```
