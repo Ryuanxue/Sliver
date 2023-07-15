@@ -35,6 +35,45 @@ def find_source_sink_in_groundtruth(dirpath, source_line_list, sink_line_list):
                     i=i+1
 
 
+def auto_gen_verify_command_one(dirname):
+    badsource_sink_linelist=[dirname]
+    for line in badsource_sink_linelist:
+        subdirname = line.strip()
+        workspacedir = "workspace/" + subdirname
+        absworkdir = os.path.abspath(workspacedir)
+        com = "cd " + absworkdir + "/code_gened;ls -c"  # ls -c按照文件修改时间排序
+        (status, output) = subprocess.getstatusoutput(com)
+        cfile_list = []  # cfilename
+        tempstr = ""
+        for i in output:  # 将ls -c的结果按行存入cfile_list
+            if i == "\n":  # 按行存入cfile_list
+                cfile_list.append(tempstr)
+                tempstr = ""  # 清空tempstr
+            else:
+                tempstr = tempstr + i  # 将每一个的字符存入tempstr
+        cfile_list.append(tempstr)
+
+        # 创建cbmc_result文件夹
+        cbmc_result_dir = absworkdir+"/cbmc_result"
+        if not os.path.exists(cbmc_result_dir):
+            os.makedirs(cbmc_result_dir)
+
+        for cfile in cfile_list:  # 对每一个c文件生成cbmc命令
+            if cfile.endswith(".c"):
+                funname = cfile[:-2]
+
+                # 生成能记录时间和内存的cbmc命令
+                cbmc_verify_command = "time -v cbmc -I"+workspacedir+"/source_code -I"+workspacedir+"/code_gened " + workspacedir + "/code_gened/" + cfile + " " + workspacedir+"/self_com/"+funname + "_self_com.c " + workspacedir+"/source_code/*.c --function " + \
+                    funname + "_self_com --unwind 11 --no-built-in-assertions -slice-formula --drop-unused-functions --trace --json-ui > "+workspacedir+"/cbmc_result/" + \
+                    funname+"_cbmc_result.json 2> " + workspacedir+"/cbmc_result/" + \
+                    funname+"_cbmc_time_memery.txt"
+                os.system(cbmc_verify_command)
+
+                # # (status, output) = subprocess.getstatusoutput(genselfcom_commmand)
+                # print('echo "'+cbmc_verify_command+'"')
+                # print(cbmc_verify_command)
+
+
 def auto_genslice_one(dirname):
    
    #对每一个examples/dirname,自动调用pre_process.py进行预处理，生成workspace/dirname/source_code
@@ -90,6 +129,9 @@ def auto_genslice_one(dirname):
     #自合成
     command="python3 gen_self_com.py "+dirname
     (status, output) = subprocess.getstatusoutput(command)
+
+    #验证
+    auto_gen_verify_command_one(dirname)
 
 
 

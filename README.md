@@ -12,9 +12,10 @@ sudo apt-get install llvm-12 llvm-12-dev clang-12
 ```
 pip3 install pydot
 ```
-* Install cbmc
+* Install cbmc-5.62
+To download the corresponding *deb package for CBMC 5.62, visit https://github.com/diffblue/cbmc/releases?page=4. Then, use the following command to install:
 ```
-sudo apt-get install cbmc
+sudo dpkg -i ubuntu-20.04-cbmc-5.62.0-Linux.deb
 ```
 * Install afl-2.57
 ```
@@ -141,7 +142,8 @@ Examples 2: 000_062_516
 python3 pre_process_fuzz.py examples/000_062_516
 python3 auto_groundtruth_fuzzing_test.py 000_062_516
 ```
-- TODO: please explain how to use the result of consistency testing because user should use the result to decide if the case can be delivered to the CBMC verification. And also explain how the user can read the code coverage rate.
+
+- You can navigate to each subdirectory under the directory "workspace_fuzz/[pro-name]/work_fuzz" to view the consistency test results corresponding to a source-sink pair.In 'coveraga_rate.txt', the content represents coverage rate, while in 'consistence.txt', the result can be either 'true' or 'false'. If it's true, it indicates that the consistency test was successful, meaning that the semantics of the slice are consistent with the corresponding portion of the original program. If it's false, it means the opposite. Slices with a true result can be passed to cbmc for verification.
 
 ## Batch-job test
 
@@ -166,7 +168,7 @@ python3 auto_groundtruth_fuzzing_test.py
 * examples
   * Motivating example and test cases.
 * utils
-  * ...(TODO).
+  * Some auxiliary tools used for generating slices and performing consistency tests.
 
 ## Contributors
 
