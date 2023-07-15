@@ -13,6 +13,7 @@ sudo apt-get install llvm-12 llvm-12-dev clang-12
 pip3 install pydot
 ```
 * Install cbmc-5.62
+  
 To download the corresponding *deb package for CBMC 5.62, visit https://github.com/diffblue/cbmc/releases?page=4. Then, use the following command to install:
 ```
 sudo dpkg -i ubuntu-20.04-cbmc-5.62.0-Linux.deb
